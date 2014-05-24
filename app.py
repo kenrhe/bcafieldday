@@ -10,10 +10,25 @@ app = Flask(__name__)
 #this function tells the app what to do when it loads the main page
 def index():
 	#render_template will render the index.html found in the template folder
-	green = 20
-	yellow = 30
-	red = 10
-	blue = 40
+    green = 0
+	yellow = 0
+	red = 0
+	blue = 0
+	MONGO_URL = os.environ.get('MONGOHQ_URL')
+	client = MongoClient(MONGO_URL)
+	db = client.app25605883
+	collection = db.points
+	for event in collection.find():
+		team = event['team']
+		points = event['points']
+		if (team == "green"):
+			green+= points
+		elif (team == "yellow"):
+			yellow+= points
+		elif (team == "red"):
+			red+=points
+		else:
+			blue+=points
 	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green)
 
 @app.route('/change')
@@ -33,8 +48,20 @@ def post():
 @app.route('/admin', methods=['GET','POST'])
 def admin():
 	if request.method == 'POST':
-		return redirect('/')
-	return redirect('/')
+		team=request.form['team']
+		event=request.form['event']
+		points=request.form['points']
+
+		MONGO_URL = os.environ.get('MONGOHQ_URL')
+		client = MongoClient(MONGO_URL)
+		db = client.app25605883
+		collection = db.points
+
+		event = {"event":event,"team":team,"points":points}
+		event_id = collection.insert(event)
+
+		return render_template('admin.html')
+	return render_template('admin.html')
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
