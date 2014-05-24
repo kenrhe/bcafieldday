@@ -24,7 +24,7 @@ def index():
 	collection = db.points
 	for event in collection.find():
 		team = event['team']
-		points = event['points']
+		points = int(event['points'])
 		if (team == "green"):
 			green+= points
 		elif (team == "yellow"):
