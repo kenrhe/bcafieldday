@@ -2,6 +2,10 @@ from flask import Flask, render_template, request, redirect
 import jinja2
 import os
 
+import datetime
+import pymongo
+from pymongo import MongoClient
+
 #making a new Flask app
 app = Flask(__name__)
 
