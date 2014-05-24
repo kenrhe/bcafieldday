@@ -4,6 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="/static/custom.css">
 	</head>
 	<body>
+	<center>
 		<h1>BCA FIELD DAY</h1>
 		<h2>Blue Team</h2>
 		{{blue}}
@@ -19,6 +20,7 @@
 				<td> Event Name </td>
 				<td> Points </td>
 				<td> Team </td>
+			</tr>
 			{% for event in events %}
 			<tr>
 				<td> {{ event['event'] }} </td>
@@ -27,5 +29,6 @@
 			</tr>
 			{% endfor %}
 		</table>
+	</center>
 	</body>
 </html>
