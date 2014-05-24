@@ -17,9 +17,7 @@
 		<table>
 			{% for event in events %}
 			<tr>
-				{% for i in event %}
-				<td> {{ i }} </td>
-				{% endfor %}
+				<td> {{ event['points'] }} </td>
 			</tr>
 			{% endfor %}
 		</table>
