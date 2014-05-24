@@ -31,23 +31,7 @@ def post():
 	#this will run when the user simply goes to the URL
 	return render_template('get.html')
 
-@app.route('/admin', methods=['GET','POST'])
-def admin():
-	if request.method == 'POST':
-		team=request.form['team']
-		event=request.form['event']
-		points=request.form['points']
 
-		MONGO_URL = os.environ.get('MONGOHQ_URL')
-		client = MongoClient(MONGO_URL)
-		db = client.app25605883
-		collection = db.points
-
-		event = {"event":event,"team":team,"points":points}
-		event_id = collection.insert(event)
-
-		return render_template('admin.html')
-	return render_template('admin.html')
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
