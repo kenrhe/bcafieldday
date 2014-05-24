@@ -33,7 +33,7 @@ def index():
 			red+=points
 		else:
 			blue+=points
-	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green)
+	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=collection.find())
 
 @app.route('/change')
 def change():
