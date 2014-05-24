@@ -8,9 +8,13 @@ app = Flask(__name__)
 #@app.route binds a function to specific url
 @app.route('/')
 #this function tells the app what to do when it loads the main page
-def hello():
+def index():
 	#render_template will render the index.html found in the template folder
-	return render_template("index.html")
+	green = 20
+	yellow = 30
+	red = 10
+	blue = 40
+	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green)
 
 @app.route('/change')
 def change():
@@ -25,6 +29,11 @@ def post():
 		return render_template('post.html')
 	#this will run when the user simply goes to the URL
 	return render_template('get.html')
+
+@app.route('/admin', methods=['GET','POST'])
+def admin():
+	if request.method == 'POST':
+		#
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
