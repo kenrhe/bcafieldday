@@ -10,6 +10,10 @@ app = Flask(__name__)
 #this function tells the app what to do when it loads the main page
 def index():
 	#render_template will render the index.html found in the template folder
+    green = 0
+	yellow = 0
+	red = 0
+	blue = 0
 
 	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green)
 
