@@ -33,7 +33,8 @@ def post():
 @app.route('/admin', methods=['GET','POST'])
 def admin():
 	if request.method == 'POST':
-		#
+		return redirect('/')
+	return redirect('/')
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
