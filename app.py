@@ -38,9 +38,13 @@ def index():
 def change():
 	#returning redirect will cause it do go to the specificed URL
 	if request.method == 'POST':
+
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
+		if request.form['submit'] == "REMOVE":
+			collection.remove({"event" : event})
+			return redirect('/admin')
 		print ("changed %s %s %s" % (team, event, points))
 		collection.update({ "event" : event }, { "$set" : { "team": team, "event": event, "points": points }}, upsert=False)
 		return redirect('/admin')

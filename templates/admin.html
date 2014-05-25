@@ -26,7 +26,8 @@
 				<td> <input type="text" name="event" value="{{ event['event'] }}" readonly> </td>
 				<td> <input type="text" name="points" value="{{ event['points'] }}"> </td>
 				<td> <input type="text" name="team" value="{{ event['team'] }}"></td>
-				<td> <input type="submit" value="CHANGE"> </td>
+				<td> <input type="submit" value="CHANGE" name="submit"> </td>
+				<td> <input type="submit" value="REMOVE" name="submit"></td>
 			</form>
 			</tr>
 			{% endfor %}
