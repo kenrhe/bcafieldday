@@ -23,9 +23,9 @@
 			{% for event in events %}
 			<tr>
 			<form name="event" action="/change" method="POST">
-				<td> <input type="text" name="event" placeholder="{{ event['event'] }}"> </td>
-				<td> <input type="text" name="points" placeholder="{{ event['points'] }}"> </td>
-				<td> <input type="text" name="team">{{ event['team'] }}</td>
+				<td> <input type="text" name="event" value="{{ event['event'] }}"> </td>
+				<td> <input type="text" name="points" value="{{ event['points'] }}"> </td>
+				<td> <input type="text" name="team" value="{{ event['team'] }}"></td>
 				<td> <input type="submit" value="CHANGE"> </td>
 			</form>
 			</tr>
