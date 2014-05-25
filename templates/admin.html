@@ -13,5 +13,21 @@
 			<input type="submit" value="Submit">
 		</form>
 		</center>
+		<table border="1">
+			<tr>
+				<td> Event Name </td>
+				<td> Points </td>
+				<td> Team </td>
+			</tr>
+			{% for event in events %}
+			<tr>
+			<form name="event" action="/change" method="POST">
+				<td> <input type="text" name="event" placeholder="{{ event['event'] }}"> </td>
+				<td> <input type="text" name="points" placeholder="{{ event['points'] }}"> </td>
+				<td> <input type="text" name="team" placeholder="{{ event['team'] }}"> </td>
+			</form>
+			</tr>
+			{% endfor %}
+		</table>
 	</body>
 </html>
