@@ -55,10 +55,6 @@ def post():
 	#this will run when the user simply goes to the URL
 	return render_template('get.html')
 
-@app.route('/css/style.css', methods=['GET'])
-def css():
-	return app.send_static_file('css/style.css')
-
 @app.route('/admin', methods=['GET','POST'])
 def admin():
 
