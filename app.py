@@ -34,7 +34,7 @@ def index():
 			blue+=points
 	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=collection.find())
 
-@app.route('/change')
+@app.route('/change', methods=['GET', 'POST'])
 def change():
 	#returning redirect will cause it do go to the specificed URL
 	if request.method == 'POST':
