@@ -21,10 +21,6 @@ def index():
 	yellow = 0
 	red = 0
 	blue = 0
-	MONGO_URL = os.environ.get('MONGOHQ_URL')
-	client = MongoClient(MONGO_URL)
-	db = client.app25605883
-	collection = db.points
 	for event in collection.find():
 		team = event['team']
 		points = int(event['points'])
