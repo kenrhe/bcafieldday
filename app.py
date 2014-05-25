@@ -41,6 +41,8 @@ def change():
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
+		collection.update({ event : event }, { $set : { team: team, event: event, points: points }})
+		return redirect('/admin')
 	return redirect('/admin')
 
 #in this app.route we allow POST requests to be sent to /post
