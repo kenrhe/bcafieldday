@@ -51,21 +51,22 @@ def post():
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
+
+	MONGO_URL = os.environ.get('MONGOHQ_URL')
+	client = MongoClient(MONGO_URL)
+	db = client.app25605883
+	collection = db.points
 	if request.method == 'POST':
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
 
-		MONGO_URL = os.environ.get('MONGOHQ_URL')
-		client = MongoClient(MONGO_URL)
-		db = client.app25605883
-		collection = db.points
 
 		event = {"event":event,"team":team,"points":points}
 		event_id = collection.insert(event)
 
-		return render_template('admin.html')
-	return render_template('admin.html')
+		return render_template('admin.html', events=collection.find())
+	return render_template('admin.html', events=collection.find())
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
