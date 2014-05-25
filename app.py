@@ -42,7 +42,7 @@ def change():
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
-		collection.update({ event : event }, { "$set" : { team: team, event: event, points: points }})
+		collection.update({ event : str(event) }, { "$set" : { team: team, event: event, points: points }})
 		return redirect('/admin')
 	return redirect('/admin')
 
