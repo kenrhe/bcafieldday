@@ -38,6 +38,7 @@ def index():
 def change():
 	#returning redirect will cause it do go to the specificed URL
 	if request.method == 'POST':
+		print "changed"
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
