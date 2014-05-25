@@ -8,7 +8,10 @@ from pymongo import MongoClient
 
 #making a new Flask app
 app = Flask(__name__)
-
+MONGO_URL = os.environ.get('MONGOHQ_URL')
+client = MongoClient(MONGO_URL)
+db = client.app25605883
+collection = db.points
 #@app.route binds a function to specific url
 @app.route('/')
 #this function tells the app what to do when it loads the main page
@@ -38,7 +41,11 @@ def index():
 @app.route('/change')
 def change():
 	#returning redirect will cause it do go to the specificed URL
-	return redirect('/')
+	if request.method == 'POST':
+		team=request.form['team']
+		event=request.form['event']
+		points=request.form['points']
+	return redirect('/admin')
 
 #in this app.route we allow POST requests to be sent to /post
 @app.route('/post', methods=['GET','POST'])
@@ -52,10 +59,7 @@ def post():
 @app.route('/admin', methods=['GET','POST'])
 def admin():
 
-	MONGO_URL = os.environ.get('MONGOHQ_URL')
-	client = MongoClient(MONGO_URL)
-	db = client.app25605883
-	collection = db.points
+
 	if request.method == 'POST':
 		team=request.form['team']
 		event=request.form['event']
