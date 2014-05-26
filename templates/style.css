@@ -4,15 +4,24 @@ body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     text-align: center;
 }
-
-.upperHalf {
-  background-color: black;
-  top: 0;
-  left:0;
-  right:0;
-  height:50%;
+.top, .bottom {
+  position:fixed;
+  left: 0;
+  right: 0;
+  height: 50%;
+  text-align:center;
 }
 
+.top {
+  top: 0;
+  background-color: rgba(243,243,243,0);
+
+}
+
+.bottom {
+  bottom: 0;
+  background-color: rgba(243,243,243,0);
+}
 h1 {
     color: rgb(102,102,102);
     font-size: 100px;
