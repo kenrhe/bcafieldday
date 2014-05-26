@@ -8,6 +8,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 app.secret_key = 'verylongkey'
+
 MONGO_URL = os.environ.get('MONGOHQ_URL')
 client = MongoClient(MONGO_URL)
 db = client.app25605883
