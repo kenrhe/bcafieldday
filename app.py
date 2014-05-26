@@ -64,7 +64,7 @@ def logout():
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
-	if 'ihatefishsticks' in session:
+	if 'username' in session:
 		print "you are logged in"
 	else:
 		return redirect('/')
