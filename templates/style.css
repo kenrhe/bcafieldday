@@ -2,8 +2,13 @@
 
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    background:url("../images/bg.jpg");
     text-align: center;
+}
+
+.upperHalf {
+  background-color: rgba(243,243,243, 0);
+  height: 20%;
+  position: absolute;
 }
 
 h1 {
