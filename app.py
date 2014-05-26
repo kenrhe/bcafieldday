@@ -7,7 +7,7 @@ import pymongo
 from pymongo import MongoClient
 
 app = Flask(__name__)
-app.secret_key = 'verylongkey'
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 MONGO_URL = os.environ.get('MONGOHQ_URL')
 client = MongoClient(MONGO_URL)
@@ -64,9 +64,7 @@ def logout():
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
-	if 'ihatefishsticks' in session:
-		pass
-	else:
+	if not 'ihatefishsticks' in session:
 		return redirect('/login')
 	if request.method == 'POST':
 		team=request.form['team']
