@@ -45,8 +45,7 @@ h2 {
 }
 
 .score {
-    margin: 5px;
-    float: left;
+    margin: 0 auto;
 }
 
 .buttons {
