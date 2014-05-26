@@ -1,20 +1,20 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, Response
 import jinja2
 import os
 
 import datetime
 import pymongo
 from pymongo import MongoClient
+from functools import wraps
 
-#making a new Flask app
 app = Flask(__name__)
+
 MONGO_URL = os.environ.get('MONGOHQ_URL')
 client = MongoClient(MONGO_URL)
 db = client.app25605883
 collection = db.points
-#@app.route binds a function to specific url
+
 @app.route('/')
-#this function tells the app what to do when it loads the main page
 def index():
 	#render_template will render the index.html found in the template folder
 	green = 0
@@ -51,6 +51,7 @@ def change():
 	return redirect('/admin')
 
 @app.route('/admin', methods=['GET','POST'])
+@requires_auth
 def admin():
 
 
@@ -65,6 +66,22 @@ def admin():
 
 		return render_template('admin.html', events=collection.find())
 	return render_template('admin.html', events=collection.find())
+
+def check_auth(password):
+	return password == 'ihatefishsticks'
+
+def authenticate():
+	return Response('Could not verify your access level for that URL.\n'
+		'You have to login with proper credentials',401,{'WWW-Authenticate': 'Basic realm="Login Required"'})
+
+def requires_auth(f):
+	@wraps(f)
+	def decorated(*args, **kwargs):
+		auth = request.authorization
+		if not auth or not check_auth(auth.password):
+			return authenticate()
+		return f(*args, **kwargs)
+	return decorated
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
