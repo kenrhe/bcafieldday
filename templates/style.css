@@ -28,6 +28,16 @@ h2 {
     margin-bottom: 6px;
 }
 
+h1 {
+    color: rgb(102,102,102);
+    font-size: 100px;
+    font-weight: 500;
+    color:#666666;
+    text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
+    margin-top:24px;
+    margin-bottom:12px;
+}
+
 .score {
     margin: 5px;
 }
