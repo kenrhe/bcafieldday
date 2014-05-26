@@ -45,10 +45,7 @@ h2 {
 }
 
 .score {
-    display: block;
     display: inline-block;
-    float: left;
-    margin-left: 3px;
 }
 
 .buttons {
