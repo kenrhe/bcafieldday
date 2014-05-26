@@ -53,7 +53,7 @@ def change():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	if request.method == 'POST':
-		session['username'] = request.form['username']
+		session['username'] = request.form['password']
 		return redirect('/admin')
 	return render_template('login.html')
 
