@@ -14,6 +14,22 @@ client = MongoClient(MONGO_URL)
 db = client.app25605883
 collection = db.points
 
+def check_auth(password):
+	return password == 'ihatefishsticks'
+
+def authenticate():
+	return Response('Could not verify your access level for that URL.\n'
+		'You have to login with proper credentials',401,{'WWW-Authenticate': 'Basic realm="Login Required"'})
+
+def requires_auth(f):
+	@wraps(f)
+	def decorated(*args, **kwargs):
+		auth = request.authorization
+		if not auth or not check_auth(auth.password):
+			return authenticate()
+		return f(*args, **kwargs)
+	return decorated
+	
 @app.route('/')
 def index():
 	#render_template will render the index.html found in the template folder
@@ -53,8 +69,6 @@ def change():
 @app.route('/admin', methods=['GET','POST'])
 @requires_auth
 def admin():
-
-
 	if request.method == 'POST':
 		team=request.form['team']
 		event=request.form['event']
@@ -66,22 +80,6 @@ def admin():
 
 		return render_template('admin.html', events=collection.find())
 	return render_template('admin.html', events=collection.find())
-
-def check_auth(password):
-	return password == 'ihatefishsticks'
-
-def authenticate():
-	return Response('Could not verify your access level for that URL.\n'
-		'You have to login with proper credentials',401,{'WWW-Authenticate': 'Basic realm="Login Required"'})
-
-def requires_auth(f):
-	@wraps(f)
-	def decorated(*args, **kwargs):
-		auth = request.authorization
-		if not auth or not check_auth(auth.password):
-			return authenticate()
-		return f(*args, **kwargs)
-	return decorated
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
