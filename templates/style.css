@@ -4,7 +4,7 @@ body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     text-align: center;
 }
-.top, .bottom {
+#top, #bottom {
   position:fixed;
   left: 0;
   right: 0;
@@ -12,13 +12,13 @@ body {
   text-align:center;
 }
 
-.top {
+#top {
   top: 0;
   background-color: rgba(243,243,243,0);
 
 }
 
-.bottom {
+#bottom {
   bottom: 0;
   background-color: rgba(243,243,243,0);
 }
