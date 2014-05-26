@@ -59,7 +59,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-	session.pop('ihatefishsticks', None)
+	session.pop('username', None)
 	return redirect('/admin')
 
 @app.route('/admin', methods=['GET','POST'])
