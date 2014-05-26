@@ -50,15 +50,6 @@ def change():
 		return redirect('/admin')
 	return redirect('/admin')
 
-#in this app.route we allow POST requests to be sent to /post
-@app.route('/post', methods=['GET','POST'])
-def post():
-	#here we are checking if the request coming in is a post request
-	if request.method == 'POST':
-		return render_template('post.html')
-	#this will run when the user simply goes to the URL
-	return render_template('get.html')
-
 @app.route('/admin', methods=['GET','POST'])
 def admin():
 
