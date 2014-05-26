@@ -46,7 +46,7 @@ h2 {
 
 .score {
     margin: 5px;
-    display: block;
+    float: left;
 }
 
 .buttons {
