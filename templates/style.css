@@ -4,15 +4,15 @@ body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
 }
 #top, #bottom {
-  position:fixed;
-  left: 0;
-  right: 0;
-  height: 50%;
+    position:fixed;
+    left: 0;
+    right: 0;
+    height: 50%;
 }
 
 #top {
-  top: 0;
-  background-color: gray;
+    top: 0;
+    background-color: gray;
 
 }
 
