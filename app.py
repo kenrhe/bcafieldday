@@ -64,7 +64,9 @@ def logout():
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
-	if not 'ihatefishsticks' in session:
+	if 'ihatefishsticks' in session:
+		pass
+	else:
 		return redirect('/login')
 	if request.method == 'POST':
 		team=request.form['team']
