@@ -2,14 +2,12 @@
 
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    text-align: center;
 }
 #top, #bottom {
   position:fixed;
   left: 0;
   right: 0;
   height: 50%;
-  text-align:center;
 }
 
 #top {
