@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, escape
+from flask import Flask, render_template, request, session, redirect
 import jinja2
 import os
 
@@ -7,7 +7,7 @@ import pymongo
 from pymongo import MongoClient
 
 app = Flask(__name__)
-app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.secret_key = 'A0Zr98jhigFASF553mN]LWX/,?RT'
 
 MONGO_URL = os.environ.get('MONGOHQ_URL')
 client = MongoClient(MONGO_URL)
@@ -53,21 +53,19 @@ def change():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	if request.method == 'POST':
-		session['username'] = request.form['password']
+		session['admin'] = request.form['password']
 		return redirect('/admin')
 	return render_template('login.html')
 
 @app.route('/logout')
 def logout():
-	session.pop('username', None)
+	session.pop('admin', None)
 	return redirect('/admin')
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
-	if 'username' in session:
-		print "you are logged in"
-	else:
-		return redirect('/')
+	if not('admin' in session) or not(session['admin'] == 'ihatefishsticks'):
+		return redirect('/login')
 	if request.method == 'POST':
 		team=request.form['team']
 		event=request.form['event']
