@@ -55,7 +55,10 @@ def login():
 	if 'admin' in session:
 		return redirect('/admin')
 	if request.method == 'POST':
-		session['admin'] = request.form['password']
+		password = request.form['password']
+		if not password == 'ihatefishsticks':
+			return redirect('/login')
+		session['admin'] = password
 		return redirect('/admin')
 	return render_template('login.html')
 
@@ -66,7 +69,7 @@ def logout():
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
-	if not('admin' in session) or not(session['admin'] == 'ihatefishsticks'):
+	if not 'admin' in session:
 		return redirect('/login')
 	if request.method == 'POST':
 		team=request.form['team']
