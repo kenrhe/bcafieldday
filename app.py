@@ -53,7 +53,7 @@ def change():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	if 'admin' in session:
-		return redirect('/')
+		return redirect('/admin')
 	if request.method == 'POST':
 		session['admin'] = request.form['password']
 		return redirect('/admin')
