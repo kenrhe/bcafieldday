@@ -65,7 +65,7 @@ def login():
 @app.route('/logout')
 def logout():
 	session.pop('admin', None)
-	return redirect('/admin')
+	return redirect('/login')
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
@@ -75,7 +75,6 @@ def admin():
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
-
 
 		event = {"event":event,"team":team,"points":points}
 		event_id = collection.insert(event)
