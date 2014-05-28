@@ -16,6 +16,7 @@ collection = db.points
 
 @app.route('/')
 def index():
+	#edit
 	#render_template will render the index.html found in the template folder
 	green = 0
 	yellow = 0
