@@ -37,8 +37,22 @@ def index():
 
 @app.route('/scores')
 def scores():
-	print "fired 6969"
-	return jsonify(result=6969)
+	green = 0
+	yellow = 0
+	red = 0
+	blue = 0
+	for event in collection.find():
+		team = event['team']
+		points = int(event['points'])
+		if (team == "green"):
+			green+= points
+		elif (team == "yellow"):
+			yellow+= points
+		elif (team == "red"):
+			red+=points
+		else:
+			blue+=points	
+	return jsonify(blue=blue,green=green,red=red,yellow=yellow)
 
 @app.route('/change', methods=['GET', 'POST'])
 def change():

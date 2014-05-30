@@ -3,9 +3,21 @@
 	<title>BCA Field Day</title>
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
 	<script type="text/javascript" src="/static/canvasjs.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript">
-	window.onload = function () {
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  var blue = 0;
+  var green = 0;
+  var red = 0;
+  var yellow = 0;
+  $.getJSON('/scores', {
+
+  }, function(data) {
+    blue = data.blue;
+    green = data.green;
+    red = data.red;
+    yellow = data.yellow;
+  });
+  window.onload = function () {
     CanvasJS.addColorSet("teamColors",
                 [//colorSet Array
 
@@ -26,26 +38,26 @@
     var chart = new CanvasJS.Chart("chartContainer",{
       backgroundColor: "F3F3F3",
       colorSet: "teamColors",
-    	theme:  "theme1",
-    	title:{ 
-    		text: ""
-    	},
-    	axisY: {        
-    		title: "NUMBER OF POINTS"
-    	},          
-    	legend:{
-    		verticalAlign: "top",
-    		horizontalAlign: "centre",
-    		fontSize: 18
+      theme:  "theme1",
+      title:{ 
+        text: ""
+      },
+      axisY: {        
+        title: "NUMBER OF POINTS"
+      },          
+      legend:{
+        verticalAlign: "top",
+        horizontalAlign: "centre",
+        fontSize: 18
 
-    	},
-    	data : [{
-    		type: "column",
-    		showInLegend: false,
-    		legendMarkerType: "none",       
-    		indexLabel: "{y}",
-    		dataPoints: dps
-    	}]
+      },
+      data : [{
+        type: "column",
+        showInLegend: false,
+        legendMarkerType: "none",       
+        indexLabel: "{y}",
+        dataPoints: dps
+      }]
     });
 
     // renders initial chart
@@ -54,22 +66,28 @@
     var sum = 590;   //initial sum 
 
     var updateInterval = 5000;  // milliseconds
-    var updateData = 0;
+
     var updateChart = function () {
       // Selecting a random dataPoint
       //var dataPointIndex = Math.round(Math.random()*3);   
-      var dataPointIndex = 0;
+      //var dataPointIndex = 0;
       // generating random value
       //var deltaY = Math.random()*100;
 
       $.getJSON('/scores', {
 
       }, function(data) {
-          updateData = data.result;
+        blue = data.blue;
+        green = data.green;
+        red = data.red;
+        yellow = data.yellow;
       });
 
       // adding random value to random dataPoint
-      dps[dataPointIndex].y = updateData;
+      dps[0].y = blue;
+      dps[1].y = green;
+      dps[2].y = red;
+      dps[3].y = yellow;
 
       // updating legend text. 
       //sum = sum + deltaY;
