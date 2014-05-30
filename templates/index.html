@@ -96,41 +96,24 @@
   <body>
    <div id="top">
     <h1>BCA <strong>FIELD DAY</strong></h1>
-    <div class="score" style="color:blue">
-     <strong>Blue Team</strong>
-     {{blue}}
-   </div>
-
-   <div class="score" style="color:red">
-     <strong>Red Team</strong>
-     {{red}}
-   </div>
-   <div class="score" style="color:yellow">
-     <strong>Yellow Team</strong>
-     {{yellow}}
-   </div>
-   <div class="score" style="color:green">
-     <strong>Green Team</strong>
-     {{green}}
-   </div>
-   <div id="chartContainer" style="height:300px; width:100%;">
-   </div>
- </div>
- <div id="bottom">
-  <table border="1">
-   <tr>
-    <td> Event Name </td>
-    <td> Points </td>
-    <td> Team </td>
-  </tr>
-  {% for event in events %}
-  <tr>
-    <td> {{ event['event'] }} </td>
-    <td> {{ event['points'] }} </td>
-    <td> {{ event['team'] }} </td>
-  </tr>
-  {% endfor %}
-</table>
+    <div id="chartContainer" style="height:300px; width:100%;">
+    </div>
+  </div>
+  <div id="bottom">
+    <table border="1">
+     <tr>
+      <td> Event Name </td>
+      <td> Points </td>
+      <td> Team </td>
+    </tr>
+    {% for event in events %}
+    <tr>
+      <td> {{ event['event'] }} </td>
+      <td> {{ event['points'] }} </td>
+      <td> {{ event['team'] }} </td>
+    </tr>
+    {% endfor %}
+  </table>
 </div>
 </body>
 </html>
