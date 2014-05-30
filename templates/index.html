@@ -54,7 +54,7 @@
     var sum = 590;   //initial sum 
 
     var updateInterval = 5000;  // milliseconds
-
+    var updateData = 0;
     var updateChart = function () {
       // Selecting a random dataPoint
       //var dataPointIndex = Math.round(Math.random()*3);   
@@ -65,8 +65,8 @@
       $.getJSON('/scores', {
 
       }, function(data) {
-          var data = data.result;
-      })
+          var updateData = data.result;
+      });
 
       // adding random value to random dataPoint
       dps[dataPointIndex].y = data;
