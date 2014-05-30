@@ -3,7 +3,7 @@
 	<title>BCA Field Day</title>
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
 	<script type="text/javascript" src="/static/canvasjs.min.js"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">
 	window.onload = function () {
     CanvasJS.addColorSet("teamColors",
@@ -21,7 +21,7 @@
     {label: "RED", y: 0},
     {label: "YELLOW", y: 0},
     ];
-    var totalPoints = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: 0";
+    //var totalPoints = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: 0";
 
     var chart = new CanvasJS.Chart("chartContainer",{
       backgroundColor: "F3F3F3",
@@ -41,9 +41,8 @@
     	},
     	data : [{
     		type: "column",
-    		showInLegend: true,
+    		showInLegend: false,
     		legendMarkerType: "none",       
-    		legendText: totalPoints,
     		indexLabel: "{y}",
     		dataPoints: dps
     	}]
@@ -58,18 +57,18 @@
 
     var updateChart = function () {
       // Selecting a random dataPoint
-      var dataPointIndex = Math.round(Math.random()*3);   
-
+      //var dataPointIndex = Math.round(Math.random()*3);   
+      var dataPointIndex = 0;
       // generating random value
-      var deltaY = Math.random()*100;
+      //var deltaY = Math.random()*100;
 
       // adding random value to random dataPoint
-      dps[dataPointIndex].y = (dps[dataPointIndex].y + deltaY) > 0 ? dps[dataPointIndex].y + deltaY : 0 ;
+      dps[dataPointIndex].y = 6969;
 
       // updating legend text. 
-      sum = sum + deltaY;
-      totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
-      chart.options.data[0].legendText = totalPoints;  
+      //sum = sum + deltaY;
+      //totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
+      //chart.options.data[0].legendText = totalPoints;  
 
       chart.render();
     };
