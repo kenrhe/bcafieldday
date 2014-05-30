@@ -6,9 +6,17 @@
 
 	<script type="text/javascript">
 	window.onload = function () {
+    CanvasJS.addColorSet("greenShades",
+                [//colorSet Array
+
+                "#0000FF",
+                "#00CC99",
+                "#FF0000",
+                "#FFFF00"             
+                ]);
     // initial values of dataPoints
     var dps = [
-    {label: "BLUE", y: 0}  ,
+    {label: "BLUE", y: 0},
     {label: "GREEN", y: 0},
     {label: "RED", y: 0},
     {label: "YELLOW", y: 0},
@@ -62,51 +70,51 @@
       chart.options.data[0].legendText = totalPoints;  
 
       chart.render();
-  };
+    };
       // update chart after specified interval
       setInterval(function(){updateChart()}, updateInterval);
 
-  } 
-  </script>
-</head>
-<body>
-	<div id="top">
-		<h1>BCA <strong>FIELD DAY</strong></h1>
-		<div class="score" style="color:blue">
-			<strong>Blue Team</strong>
-			{{blue}}
-		</div>
-		
-		<div class="score" style="color:red">
-			<strong>Red Team</strong>
-			{{red}}
-		</div>
-		<div class="score" style="color:yellow">
-			<strong>Yellow Team</strong>
-			{{yellow}}
-		</div>
-		<div class="score" style="color:green">
-			<strong>Green Team</strong>
-			{{green}}
-		</div>
-		    <div id="chartContainer" style="height:300px; width:100%;">
-    </div>
-	</div>
-	<div id="bottom">
-		<table border="1">
-			<tr>
-				<td> Event Name </td>
-				<td> Points </td>
-				<td> Team </td>
-			</tr>
-			{% for event in events %}
-			<tr>
-				<td> {{ event['event'] }} </td>
-				<td> {{ event['points'] }} </td>
-				<td> {{ event['team'] }} </td>
-			</tr>
-			{% endfor %}
-		</table>
-	</div>
+    } 
+    </script>
+  </head>
+  <body>
+   <div id="top">
+    <h1>BCA <strong>FIELD DAY</strong></h1>
+    <div class="score" style="color:blue">
+     <strong>Blue Team</strong>
+     {{blue}}
+   </div>
+
+   <div class="score" style="color:red">
+     <strong>Red Team</strong>
+     {{red}}
+   </div>
+   <div class="score" style="color:yellow">
+     <strong>Yellow Team</strong>
+     {{yellow}}
+   </div>
+   <div class="score" style="color:green">
+     <strong>Green Team</strong>
+     {{green}}
+   </div>
+   <div id="chartContainer" style="height:300px; width:100%;">
+   </div>
+ </div>
+ <div id="bottom">
+  <table border="1">
+   <tr>
+    <td> Event Name </td>
+    <td> Points </td>
+    <td> Team </td>
+  </tr>
+  {% for event in events %}
+  <tr>
+    <td> {{ event['event'] }} </td>
+    <td> {{ event['points'] }} </td>
+    <td> {{ event['team'] }} </td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
 </body>
 </html>
