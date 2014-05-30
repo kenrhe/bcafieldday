@@ -6,20 +6,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript">
 
-  var blue = 0;
-  var green = 0;
-  var red = 0;
-  var yellow = 0;
-  window.onload = function () {
-    $.getJSON('/scores', {
 
-    }, function(data) {
-      alert("go");
-      blue = data.blue;
-      green = data.green;
-      red = data.red;
-      yellow = data.yellow;
-    });
+  window.onload = function () {
+
     CanvasJS.addColorSet("teamColors",
                 [//colorSet Array
 
@@ -31,10 +20,10 @@
     // initial values of dataPoints
     alert(blue);
     var dps = [
-    {label: "BLUE", y: blue},
-    {label: "GREEN", y: green},
-    {label: "RED", y: red},
-    {label: "YELLOW", y: yellow},
+    {label: "BLUE", y: 0},
+    {label: "GREEN", y: 0},
+    {label: "RED", y: 0},
+    {label: "YELLOW", y: 0},
     ];
     //var totalPoints = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: 0";
 
