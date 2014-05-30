@@ -59,14 +59,13 @@
       // Selecting a random dataPoint
       //var dataPointIndex = Math.round(Math.random()*3);   
       var dataPointIndex = 0;
-      var data = 0;
       // generating random value
       //var deltaY = Math.random()*100;
 
       $.getJSON('/scores', {
 
       }, function(data) {
-          data = data.result;
+          var data = data.result;
       })
 
       // adding random value to random dataPoint
