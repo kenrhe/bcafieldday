@@ -37,7 +37,7 @@ def index():
 
 @app.route('/scores')
 def scores():
-	return jsonify(result=6969)
+	return flask.jsonify(result=6969)
 
 @app.route('/change', methods=['GET', 'POST'])
 def change():
