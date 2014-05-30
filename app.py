@@ -37,6 +37,7 @@ def index():
 
 @app.route('/scores')
 def scores():
+	print "fired 6969"
 	return jsonify(result=6969)
 
 @app.route('/change', methods=['GET', 'POST'])
