@@ -6,7 +6,7 @@
 
 	<script type="text/javascript">
 	window.onload = function () {
-    CanvasJS.addColorSet("greenShades",
+    CanvasJS.addColorSet("teamColors",
                 [//colorSet Array
 
                 "#0000FF",
@@ -24,6 +24,7 @@
     var totalPoints = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: 0";
 
     var chart = new CanvasJS.Chart("chartContainer",{
+      colorSet: "teamColors",
     	theme:  "theme1",
     	title:{ 
     		text: ""
