@@ -8,13 +8,10 @@
 
 
   window.onload = function () {
-    var blue = 0;
-    var green = 0;
-    var red = 0;
-    var yellow = 0;
     $.getJSON('/scores', {
 
     }, function(data) {
+      alert("go");
       blue = data.blue;
       green = data.green;
       red = data.red;
