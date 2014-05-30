@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, jsonify
 import jinja2
 import os
 
@@ -37,7 +37,7 @@ def index():
 
 @app.route('/scores')
 def scores():
-	return flask.jsonify(result=6969)
+	return jsonify(result=6969)
 
 @app.route('/change', methods=['GET', 'POST'])
 def change():
