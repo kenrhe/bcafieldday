@@ -2,23 +2,73 @@
 <head>
 	<title>BCA Field Day</title>
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
-	<script language="javascript">
-	$('head style[type="text/css"]').attr('type', 'text/less');
-	less.refreshStyles();
-	var transform_styles = ['-webkit-transform', '-ms-transform', 'transform'];
-	window.randomize = function() {
-		var rotation = Math.floor(Math.random() * 180);
-		var fill_rotation = rotation;
-		var fix_rotation = rotation * 2;
-		for(i in transform_styles) {
+	<script type="text/javascript" src="canvasjs.js"></script>
 
-			$('.circle .fill, .circle .mask.full').css(transform_styles[i], 'rotate(' + fill_rotation + 'deg)');
-			$('.circle .fill.fix').css(transform_styles[i], 'rotate(' + fix_rotation + 'deg)');
-		}
-	}
-	setTimeout(window.randomize, 200);
-	setInterval( window.randomize, 3500 );
-	</script>
+	<script type="text/javascript">
+	window.onload = function () {
+    // initial values of dataPoints
+    var dps = [
+    {label: "Management Wing", y: 125}  ,
+    {label: "Production Lab", y: 332},
+    {label: "Cafeteria", y: 55},
+    {label: "Library", y: 46},
+    {label: "Recreation Centre", y: 32}
+    ];
+    var totalEmployees = "total people on campus: 590";
+
+    var chart = new CanvasJS.Chart("chartContainer",{
+    	theme:  "theme1",
+    	title:{ 
+    		text: "People On Campus"
+    	},
+    	axisY: {        
+    		title: "Number of People"
+    	},          
+    	legend:{
+    		verticalAlign: "top",
+    		horizontalAlign: "centre",
+    		fontSize: 18
+
+    	},
+    	data : [{
+    		type: "column",
+    		showInLegend: true,
+    		legendMarkerType: "none",       
+    		legendText: totalEmployees,
+    		indexLabel: "{y}",
+    		dataPoints: dps
+    	}]
+    });
+
+    // renders initial chart
+    chart.render();
+
+    var sum = 590;   //initial sum 
+
+    var updateInterval = 1000;  // milliseconds
+
+    var updateChart = function () {
+      // Selecting a random dataPoint
+      var dataPointIndex = Math.round(Math.random()*4);   
+
+      // generating random value
+      var deltaY = Math.random()*1000;
+
+      // adding random value to random dataPoint
+      dps[dataPointIndex].y = (dps[dataPointIndex].y + deltaY) > 0 ? dps[dataPointIndex].y + deltaY : 0 ;
+
+      // updating legend text. 
+      sum = sum + deltaY;
+      totalEmployees = "total people on campus: " + sum;      
+      chart.options.data[0].legendText = totalEmployees;  
+
+      chart.render();
+  };
+      // update chart after specified interval
+      setInterval(function(){updateChart()}, updateInterval);
+
+  } 
+  </script>
 </head>
 <body>
 	<div id="top">
@@ -40,6 +90,8 @@
 			<strong>Green Team</strong>
 			{{green}}
 		</div>
+		    <div id="chartContainer" style="height:300px; width:100%;">
+    </div>
 	</div>
 	<div id="bottom">
 		<table border="1">
