@@ -8,21 +8,20 @@
 	window.onload = function () {
     // initial values of dataPoints
     var dps = [
-    {label: "Management Wing", y: 125}  ,
-    {label: "Production Lab", y: 332},
-    {label: "Cafeteria", y: 55},
-    {label: "Library", y: 46},
-    {label: "Recreation Centre", y: 32}
+    {label: "BLUE", y: 0}  ,
+    {label: "GREEN", y: 0},
+    {label: "RED", y: 0},
+    {label: "YELLOW", y: 0},
     ];
-    var totalEmployees = "total people on campus: 590";
+    var totalPoints = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: 0";
 
     var chart = new CanvasJS.Chart("chartContainer",{
     	theme:  "theme1",
     	title:{ 
-    		text: "People On Campus"
+    		text: ""
     	},
     	axisY: {        
-    		title: "Number of People"
+    		title: "NUMBER OF POINTS"
     	},          
     	legend:{
     		verticalAlign: "top",
@@ -34,7 +33,7 @@
     		type: "column",
     		showInLegend: true,
     		legendMarkerType: "none",       
-    		legendText: totalEmployees,
+    		legendText: totalPOINTS,
     		indexLabel: "{y}",
     		dataPoints: dps
     	}]
@@ -49,18 +48,18 @@
 
     var updateChart = function () {
       // Selecting a random dataPoint
-      var dataPointIndex = Math.round(Math.random()*4);   
+      var dataPointIndex = Math.round(Math.random()*3);   
 
       // generating random value
-      var deltaY = Math.random()*1000;
+      var deltaY = Math.random()*100;
 
       // adding random value to random dataPoint
       dps[dataPointIndex].y = (dps[dataPointIndex].y + deltaY) > 0 ? dps[dataPointIndex].y + deltaY : 0 ;
 
       // updating legend text. 
       sum = sum + deltaY;
-      totalEmployees = "total people on campus: " + sum;      
-      chart.options.data[0].legendText = totalEmployees;  
+      totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
+      chart.options.data[0].legendText = totalPoints;  
 
       chart.render();
   };
