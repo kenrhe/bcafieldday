@@ -101,20 +101,22 @@
     </div>
   </div>
   <div id="bottom">
+    <div id="tableContainer">
     <table border="1">
-     <tr>
-      <td> Event Name </td>
-      <td> Points </td>
-      <td> Team </td>
-    </tr>
-    {% for event in events %}
-    <tr>
-      <td> {{ event['event'] }} </td>
-      <td> {{ event['points'] }} </td>
-      <td> {{ event['team'] }} </td>
-    </tr>
-    {% endfor %}
-  </table>
-</div>
+      <tr>
+        <td> Event Name </td>
+        <td> Points </td>
+        <td> Team </td>
+      </tr>
+      {% for event in events %}
+      <tr>
+        <td> {{ event['event'] }} </td>
+        <td> {{ event['points'] }} </td>
+        <td> {{ event['team'] }} </td>
+      </tr>
+      {% endfor %}
+    </table>
+    </div>
+  </div>
 </body>
 </html>

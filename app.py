@@ -33,7 +33,10 @@ def index():
 			red+=points
 		else:
 			blue+=points
-	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=collection.find())
+	newcollection = {}
+	for i in range(len(collection.find()), len(collection.find())-10, -1):
+		newcollection['event'] = collection.find().values()[i]
+	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=newcollection)
 
 @app.route('/scores')
 def scores():
