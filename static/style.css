@@ -55,7 +55,7 @@ table {
   border:1px solid #d3d3d3;
   background:#fefefe;
   width:36%;
-  margin:12px auto 0;
+  margin: auto 0;
   -moz-border-radius:6px; /* FF1+ */
   -webkit-border-radius:6px; /* Saf3-4 */
   border-radius:6px;
