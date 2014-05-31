@@ -33,8 +33,7 @@ def index():
 			red+=points
 		else:
 			blue+=points
-	last_ten = collection.find().sort('{_id:1}').limit(10)
-	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=last_ten)
+	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=collection.find().sort('{_id:1}').limit(5))
 
 @app.route('/scores')
 def scores():
