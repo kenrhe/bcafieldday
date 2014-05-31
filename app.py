@@ -99,8 +99,8 @@ def admin():
 		event = {"event":event,"team":team,"points":points}
 		event_id = collection.insert(event)
 
-		return render_template('admin.html', events=collection.find())
-	return render_template('admin.html', events=collection.find())
+		return redirect('/admin')
+	return render_template('admin.html', events=collection.find().sort('_id',-1))
 
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
