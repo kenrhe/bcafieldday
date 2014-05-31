@@ -27,7 +27,7 @@ h2 {
 }
 
 #top, #bottom {
-  position:fixed;
+  position:absolute;
   left: 0;
   right: 0;
 }
