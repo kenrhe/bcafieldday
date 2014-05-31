@@ -34,7 +34,7 @@ def index():
 		else:
 			blue+=points
 	newcollection = {}
-	for i in range(len(collection.find()), len(collection.find())-10, -1):
+	for i in range(collection.find().count(), collection.find().count()-10, -1):
 		newcollection['event'] = collection.find().values()[i]
 	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=newcollection)
 
