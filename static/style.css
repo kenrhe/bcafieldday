@@ -35,14 +35,14 @@ h2 {
 }
 
 #top {
-  position:fixed;
+  position:absolute;
   top: 0;
   background-color: rgba(243,243,243,1);
   height: 60%;
 }
 
 #bottom {
-  position:fixed;
+  position:absolute;
   background-color: white;
   bottom:0;
   height: 40%;
