@@ -43,7 +43,7 @@ h2 {
 }
 
 #bottom {
-  position:relative;
+  position:absolute;
   top:auto;
   background-color: white;
   bottom: 0;
