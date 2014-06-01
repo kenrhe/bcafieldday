@@ -84,7 +84,7 @@
       dps[1].y = green;
       dps[2].y = red;
       dps[3].y = yellow;
-      $( "#tableContainer" ).html("{% for event in events %} {{ table['points'] }} {% endfor %}");
+      $( "#tableContainer" ).html(table + "");
       chart.render();
       // updating legend text. 
       //sum = sum + deltaY;

@@ -72,7 +72,8 @@ def change():
 
 @app.route('/table')
 def table():
-	return jsonify(html=collection.find())
+	template = get_template('table.html').render(events=collection.find().sort('_id',-1).limit(5))
+	return jsonify(html=template)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
