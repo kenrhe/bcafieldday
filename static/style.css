@@ -27,7 +27,7 @@ h2 {
 }
 
 #container {
-  
+
 }
 
 #top, #bottom {
@@ -44,7 +44,7 @@ h2 {
 
 #bottom {
   background-color: white;
-  margin: auto;
+  bottom: 0;
 }
 
 .score {
@@ -58,6 +58,7 @@ table {
   border:1px solid #d3d3d3;
   background:#fefefe;
   width:36%;
+  bottom: none;
   text-align:center;
 }
 
