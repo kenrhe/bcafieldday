@@ -84,19 +84,12 @@
       //sum = sum + deltaY;
       //totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
       //chart.options.data[0].legendText = totalPoints;  
+      $('#tableContainer').fadeIn('slow');
 
       chart.render();
     };
       // update chart after specified interval
       setInterval(function(){updateChart()}, updateInterval);
-
-    };
-    window.onload = function () {
-      var update = function () {
-        $('#tableContainer').fadeIn('slow');
-      };
-      // update chart after specified interval
-      setInterval(function(){update()}, 2000);
 
     };
     </script>
