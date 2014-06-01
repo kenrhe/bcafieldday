@@ -40,7 +40,7 @@ h2 {
 
 #bottom {
   background-color: white;
-  bottom: 0;
+  margin: auto;
 }
 
 .score {
