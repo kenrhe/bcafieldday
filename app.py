@@ -70,6 +70,10 @@ def change():
 		return redirect('/admin')
 	return redirect('/admin')
 
+@app.route('/table')
+def table():
+	return jsonify(html=render_template('table.html', events=collection.find().sort('_id',-1).limit(5)))
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	if 'admin' in session:
