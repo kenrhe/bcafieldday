@@ -59,6 +59,7 @@
     var updateInterval = 1500;  // milliseconds
 
     var updateChart = function () {
+      $('#tableContainer').fadeOut('fast');
       // Selecting a random dataPoint
       //var dataPointIndex = Math.round(Math.random()*3);   
       //var dataPointIndex = 0;
@@ -84,7 +85,7 @@
       //sum = sum + deltaY;
       //totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
       //chart.options.data[0].legendText = totalPoints;  
-      $('#tableContainer').fadeIn('slow');
+      $('#tableContainer').fadeIn('fast');
 
       chart.render();
     };
