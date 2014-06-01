@@ -91,6 +91,14 @@
       setInterval(function(){updateChart()}, updateInterval);
 
     };
+    window.onload = function () {
+      var update = function () {
+        $('#tableContainer').fadeIn('slow');
+      };
+      // update chart after specified interval
+      setInterval(function(){update()}, 2000);
+
+    };
     </script>
   </head>
 <body>
