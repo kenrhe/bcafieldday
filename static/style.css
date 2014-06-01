@@ -66,8 +66,8 @@ tr:nth-child(odd) {
   background-color: rgba(243,243,243,1);
 }
 
-th {
-  background-color: white;
+tr:first-child td {
+  background-color:white;
 }
 
 #tableContainer {
