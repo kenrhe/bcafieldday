@@ -62,7 +62,7 @@ table {
   margin: 0 auto;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
   background-color: rgba(243,243,243,1);
 }
 

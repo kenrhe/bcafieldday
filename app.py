@@ -6,6 +6,8 @@ import datetime
 import pymongo
 from pymongo import MongoClient
 
+from werkzeug.security import generate_password_hash
+
 app = Flask(__name__)
 app.secret_key = 'A0Zr98jhigFASF553mN]LWX/,?RT'
 
@@ -33,6 +35,7 @@ def index():
 			red+=points
 		else:
 			blue+=points
+	print "" + generate_password_hash("ihatefishsticks")
 	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=collection.find().sort('_id',-1).limit(5))
 
 @app.route('/scores')
