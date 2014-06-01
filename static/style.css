@@ -43,6 +43,7 @@ h2 {
 }
 
 #bottom {
+  top:auto;
   background-color: white;
   bottom: 0;
 }
@@ -58,7 +59,6 @@ table {
   border:1px solid #d3d3d3;
   background:#fefefe;
   width:36%;
-  bottom: none;
   text-align:center;
 }
 
