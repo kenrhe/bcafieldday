@@ -83,7 +83,7 @@
       dps[1].y = green;
       dps[2].y = red;
       dps[3].y = yellow;
-      if (lastUpdate < current) {
+      if (lastUpdate != current) {
         lastUpdate = current;
         $('#tableContainer').fadeOut('fast');
         $('#tableContainer').load("/table");
