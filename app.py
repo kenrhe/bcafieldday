@@ -101,7 +101,6 @@ def admin():
 
 		return redirect('/admin')
 	return render_template('admin.html', events=collection.find().sort('_id',-1))
-
 if __name__ == '__main__':
 	#this code starts the web app, it can be found at http://localhost:8000
 	port = int(os.environ.get('PORT', 8000))

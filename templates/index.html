@@ -84,7 +84,7 @@
       //sum = sum + deltaY;
       //totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
       //chart.options.data[0].legendText = totalPoints;  
-
+  $( "#tableContainer" ).html("<table><tr><td> Event Name </td> <td> Points </td> <td> Team </td> </tr> {% for event in events %} <tr> <td> {{ event['event'] }} </td> <td> {{ event['points'] }} </td> <td> {{ event['team'] }} </td> </tr> {% endfor %} </table>")
       chart.render();
     };
       // update chart after specified interval
