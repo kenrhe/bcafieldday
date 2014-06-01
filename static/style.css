@@ -45,7 +45,7 @@ h2 {
 #bottom {
   position:absolute;
   background-color: white;
-  bottom: 0;
+  top: 0;
 }
 
 .score {
