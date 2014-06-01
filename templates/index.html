@@ -59,6 +59,7 @@
     var updateInterval = 1500;  // milliseconds
 
     var updateChart = function () {
+      $('#tableContainer').fadeOut('fast');
       // Selecting a random dataPoint
       //var dataPointIndex = Math.round(Math.random()*3);   
       //var dataPointIndex = 0;
@@ -79,12 +80,14 @@
       dps[1].y = green;
       dps[2].y = red;
       dps[3].y = yellow;
-
+  $( "#tableContainer" ).html("<table><tr><td> Event Name </td> <td> Points </td> <td> Team </td> </tr> {% for event in events %} <tr> <td> {{ event['event'] }} </td> <td> {{ event['points'] }} </td> <td> {{ event['team'] }} </td> </tr> {% endfor %} </table>")
+      chart.render();
       // updating legend text. 
       //sum = sum + deltaY;
       //totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
       //chart.options.data[0].legendText = totalPoints;  
-  $( "#tableContainer" ).html("<table><tr><td> Event Name </td> <td> Points </td> <td> Team </td> </tr> {% for event in events %} <tr> <td> {{ event['event'] }} </td> <td> {{ event['points'] }} </td> <td> {{ event['team'] }} </td> </tr> {% endfor %} </table>")
+      $('#tableContainer').fadeIn('fast');
+
       chart.render();
     };
       // update chart after specified interval
