@@ -46,6 +46,10 @@ h2 {
   background-color: white;
   bottom:0;
 }
+#bottomwithin{
+  top:0;
+  position:absolute;
+}
 
 .score {
   display: inline-block;
