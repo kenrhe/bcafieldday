@@ -33,15 +33,14 @@ body, html, #container {
 #top {
 height:50%;
 width:100%;
-background-color:#009900;
 margin:auto;
 text-align:center;
+background-color:rgba(243,243,243,1);
 }
 
 #bottom {
 height:50%;
 width:100%;
-background-color:#990000;
 margin:auto;
 text-align:center;
 color:#FFFFFF;
