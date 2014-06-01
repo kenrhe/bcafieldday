@@ -62,5 +62,6 @@ table {
 }
 
 #tableContainer {
+  left: 0;
   margin: 12px auto;
 }
