@@ -31,18 +31,19 @@ h2 {
 }
 
 #top, #bottom {
-  position:relative;
   left: 0;
   right: 0;
 }
 
 #top {
+  position:absolute;
   top: 0;
   background-color: rgba(243,243,243,1);
   height:60%;
 }
 
 #bottom {
+  position:relative;
   top:auto;
   background-color: white;
   bottom: 0;
