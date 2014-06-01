@@ -52,7 +52,7 @@ def scores():
 			red+=points
 		else:
 			blue+=points	
-	return jsonify(blue=blue,green=green,red=red,yellow=yellow)
+	return jsonify(blue=blue,green=green,red=red,yellow=yellow, current=collection.count())
 
 @app.route('/change', methods=['GET', 'POST'])
 def change():
