@@ -27,7 +27,7 @@ h2 {
 }
 
 #container {
-
+  position:absolute;
 }
 
 #top, #bottom {
@@ -43,7 +43,7 @@ h2 {
 }
 
 #bottom {
-  position:absolute;
+  position:relative;
   top:auto;
   background-color: white;
   bottom: 0;
