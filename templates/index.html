@@ -59,7 +59,6 @@
     var updateInterval = 1500;  // milliseconds
 
     var updateChart = function () {
-      $('#tableContainer').fadeOut('fast');
       // Selecting a random dataPoint
       //var dataPointIndex = Math.round(Math.random()*3);   
       //var dataPointIndex = 0;
@@ -85,7 +84,6 @@
       //sum = sum + deltaY;
       //totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
       //chart.options.data[0].legendText = totalPoints;  
-      $('#tableContainer').fadeIn('fast');
 
       chart.render();
     };
@@ -95,32 +93,32 @@
     };
     </script>
   </head>
-<body>
-<div id="container">
-  <div id="top">
-    <h1>BCA <strong>FIELD DAY</strong></h1>
-    <h2>Developed by Kenneth Rhee</h2>
-    <div id="chartContainer" style="height:300px; width:95%; margin: 0 auto;">
+  <body>
+    <div id="container">
+      <div id="top">
+        <h1>BCA <strong>FIELD DAY</strong></h1>
+        <h2>Developed by Kenneth Rhee</h2>
+        <div id="chartContainer" style="height:300px; width:95%; margin: 0 auto;">
+        </div>
+      </div>
+      <div id="bottom">
+        <div id="tableContainer">
+          <table>
+            <tr>
+              <td> Event Name </td>
+              <td> Points </td>
+              <td> Team </td>
+            </tr>
+            {% for event in events %}
+            <tr>
+              <td> {{ event['event'] }} </td>
+              <td> {{ event['points'] }} </td>
+              <td> {{ event['team'] }} </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
     </div>
-  </div>
-  <div id="bottom">
-    <div id="tableContainer">
-    <table>
-      <tr>
-        <td> Event Name </td>
-        <td> Points </td>
-        <td> Team </td>
-      </tr>
-      {% for event in events %}
-      <tr>
-        <td> {{ event['event'] }} </td>
-        <td> {{ event['points'] }} </td>
-        <td> {{ event['team'] }} </td>
-      </tr>
-      {% endfor %}
-    </table>
-    </div>
-  </div>
-</div>
-</body>
-</html>
+  </body>
+  </html>
