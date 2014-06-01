@@ -82,7 +82,7 @@ def login():
 		return redirect('/admin')
 	if request.method == 'POST':
 		password = request.form['password']
-		if not check_password_hash('pbkdf2:sha1:1000$Q7aeNDg3$cbee5d80de5731b12439b239bc602dc968d417a5', password):
+		if not check_password('pbkdf2:sha1:1000$Q7aeNDg3$cbee5d80de5731b12439b239bc602dc968d417a5', password):
 			return redirect('/login')
 		session['admin'] = password
 		return redirect('/admin')
