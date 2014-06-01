@@ -59,9 +59,9 @@ table {
   background:#fefefe;
   width:36%;
   text-align:center;
+  margin: 0 auto;
 }
 
 #tableContainer {
-  left: 0;
   margin: 12px auto;
 }
