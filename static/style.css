@@ -38,7 +38,6 @@ h2 {
   position:absolute;
   top: 0;
   background-color: rgba(243,243,243,1);
-  height:60%;
 }
 
 #bottom {
@@ -46,11 +45,6 @@ h2 {
   background-color: white;
   bottom:0;
 }
-#bottomwithin{
-  top:0;
-  position:absolute;
-}
-
 .score {
   display: inline-block;
   margin-left: 16px;
