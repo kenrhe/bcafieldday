@@ -74,18 +74,17 @@
         red = data.red;
         yellow = data.yellow;
       });
-      $.getJSON('/table', {
+      $.get('/table', {
 
       }, function(data) {
         table=data.table;
-        alert(table);
       });
       // adding random value to random dataPoint
       dps[0].y = blue;
       dps[1].y = green;
       dps[2].y = red;
       dps[3].y = yellow;
-      $( "#tableContainer" ).html(table);
+      $("#tableContainer").html(table);
       chart.render();
       // updating legend text. 
       //sum = sum + deltaY;
