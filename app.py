@@ -35,7 +35,6 @@ def index():
 			red+=points
 		else:
 			blue+=points
-	print "" + generate_password_hash("ihatefishsticks")
 	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=collection.find().sort('_id',-1).limit(5))
 
 @app.route('/scores')
@@ -83,7 +82,7 @@ def login():
 		return redirect('/admin')
 	if request.method == 'POST':
 		password = request.form['password']
-		if not password == 'ihatefishsticks':
+		if not generate_password_hash(password) == 'pbkdf2:sha1:1000$Q7aeNDg3$cbee5d80de5731b12439b239bc602dc968d417a5':
 			return redirect('/login')
 		session['admin'] = password
 		return redirect('/admin')
