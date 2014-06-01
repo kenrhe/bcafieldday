@@ -26,23 +26,26 @@ h2 {
   margin-bottom: 6px;
 }
 
-#top, #bottom {
-  position:absolute;
-  left: 0;
-  right: 0;
+body, html, #container {
+  height: 100%;
 }
 
 #top {
-  top: 0;
-  background-color: rgba(243,243,243,1);
-  height:60%;
+height:50%;
+width:100%;
+background-color:#009900;
+margin:auto;
+text-align:center;
 }
 
 #bottom {
-  background-color: white;
-  margin: auto;
+height:50%;
+width:100%;
+background-color:#990000;
+margin:auto;
+text-align:center;
+color:#FFFFFF;
 }
-
 .score {
   display: inline-block;
   margin-left: 16px;
