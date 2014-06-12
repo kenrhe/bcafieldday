@@ -1,11 +1,11 @@
 <html>
-	<head>
-		<title>Admin Panel</title>
-		<link rel="stylesheet" type="text/css" href="/static/style.css">
-	</head>
-	<body>
-		<a href="/logout">Logout</a>
-		<center>
+<head>
+	<title>Admin Panel</title>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+	<a href="/logout">Logout</a>
+	<center>
 		<form name="input" action="/admin" method="POST">
 			Enter the event name, scores made, and the team color: <br>
 			Event: <input type="text" name="event"><br>
@@ -20,25 +20,34 @@
 			<br>
 			<input type="submit" value="Submit">
 		</form>
-		</center>
-		<table border="1">
-			<tr>
-				<td> Event Name </td>
-				<td> Points </td>
-				<td> Team </td>
+	</center>
+	<table border="1">
+		<tr>
+			<td> Event Name </td>
+			<td> Points </td>
+			<td> Team </td>
 
-			</tr>
-			{% for event in events %}
-			<tr>
+		</tr>
+		{% for event in events %}
+		<tr>
 			<form name="event" action="/change" method="POST">
 				<td> <input type="text" name="event" value="{{ event['event'] }}" readonly> </td>
-				<td> <input type="text" name="points" value="{{ event['points'] }}"> </td>
-				<td> <input type="text" name="team" value="{{ event['team'] }}"></td>
+				<td> 
+					<input type="text" name="points" value="{{ event['points'] }}"> 
+				</td>
+				<td> 			
+					<select name="team">
+						<option value="blue">blue</option>
+						<option value="green">green</option>
+						<option value="red">red</option>
+						<option value="yellow">yellow</option>
+					</select>
+				</td>
 				<td> <input type="submit" value="CHANGE" name="submit"> </td>
 				<td> <input type="submit" value="REMOVE" name="submit"></td>
 			</form>
-			</tr>
-			{% endfor %}
-		</table>
-	</body>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
 </html>

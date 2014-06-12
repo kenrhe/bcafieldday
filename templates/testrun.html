@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>BCA Field Day</title>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<script type="text/javascript" src="/static/canvasjs.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+
+  window.onload = function () {
+
+    CanvasJS.addColorSet("teamColors",
+                [//colorSet Array
+
+                "#2159D6",
+                "#21AA29",
+                "#D62408",
+                "#FFCF00"             
+                ]);
+    // initial values of dataPoints
+    var dps = [
+    {label: "BLUE", y: 155},
+    {label: "GREEN", y: 150},
+    {label: "RED", y: 160},
+    {label: "YELLOW", y: 140},
+    ];
+    //var totalPoints = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: 0";
+
+    var chart = new CanvasJS.Chart("chartContainer",{
+      backgroundColor: "F3F3F3",
+      colorSet: "teamColors",
+      theme:  "theme1",
+      title:{ 
+        text: ""
+      },
+      axisY: {        
+        title: "NUMBER OF POINTS"
+      },          
+      legend:{
+        verticalAlign: "top",
+        horizontalAlign: "centre",
+        fontSize: 18
+
+      },
+      data : [{
+        type: "column",
+        showInLegend: false,
+        legendMarkerType: "none",       
+        indexLabel: "{y}",
+        dataPoints: dps
+      }]
+    });
+
+    // renders initial chart
+    chart.render();
+    };
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="top">
+        <h1>TEST <strong>PAGE</strong></h1>
+        <!-- <h2>Developed by Kenneth Rhee</h2> -->
+        <div id="chartContainer" style="height:300px; width:95%; margin: 0 auto;">
+        </div>
+      </div>
+      <div id="bottom">
+        <div id="tableContainer">
+          <table>
+            <tr>
+              <td> Event Name </td>
+              <td> Points </td>
+              <td> Team </td>
+            </tr>
+            {% for event in events %}
+            <tr>
+              <td> {{ event['event'] }} </td>
+              <td> {{ event['points'] }} </td>
+              <td> {{ event['team'] }} </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
