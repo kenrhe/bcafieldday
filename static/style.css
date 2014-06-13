@@ -48,8 +48,7 @@ h2 {
   height: 40%;
 }
 
-#chartContainer {
-  height:50%; 
+#chartContainer { 
   width:95%; 
   margin: 0 auto;
 }
