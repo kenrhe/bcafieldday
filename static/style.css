@@ -47,6 +47,12 @@ h2 {
   bottom:0;
   height: 40%;
 }
+
+#chartContainer {
+  height:50%; 
+  width:95%; 
+  margin: 0 auto;"
+}
 .score {
   display: inline-block;
   margin-left: 16px;
