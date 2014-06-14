@@ -83,15 +83,19 @@ def logout():
 def admin():
 	if not 'admin' in session:
 		return redirect('/login')
+
 	if request.method == 'POST':
 		team=request.form['team']
 		event=request.form['event']
+		points=request.form['points']
+		
+		#check if event exists
 		if collection.find({ "event" : event}).limit(1).size() == 1:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.")
-		points=request.form['points']
+
+		#check if user entered a number for points field
 		if not isinstance(points, int):
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
-
 
 		event = {"event":event,"team":team,"points":points}
 		event_id = collection.insert(event)
@@ -103,18 +107,21 @@ def admin():
 def change():
 	#returning redirect will cause it do go to the specificed URL
 	if request.method == 'POST':
-
 		team=request.form['team']
 		event=request.form['event']
-
 		points=request.form['points']
+		
 		if not isinstance(points, int):
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
+		
 		if request.form['submit'] == "REMOVE":
 			collection.remove({"event" : event})
 			return redirect('/admin')
+		
 		print ("changed %s %s %s" % (team, event, points))
+		
 		collection.update({ "event" : event }, { "$set" : { "team": team, "event": event, "points": points }}, upsert=False)
+		
 		return redirect('/admin')
 	return redirect('/admin')
 
