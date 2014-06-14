@@ -16,12 +16,11 @@ collection = db.points
 
 @app.route('/')
 def index():
-	#edit
-	#render_template will render the index.html found in the template folder
 	green = 0
 	yellow = 0
 	red = 0
 	blue = 0
+
 	for event in collection.find():
 		team = event['team']
 		points = int(event['points'])
@@ -33,6 +32,7 @@ def index():
 			red+=points
 		else:
 			blue+=points
+
 	return render_template("index.html", blue=blue, red=red, yellow=yellow, green=green, events=collection.find().sort('_id',-1).limit(10))
 
 @app.route('/scores')
@@ -41,6 +41,7 @@ def scores():
 	yellow = 0
 	red = 0
 	blue = 0
+
 	for event in collection.find():
 		team = event['team']
 		points = int(event['points'])
@@ -52,6 +53,7 @@ def scores():
 			red+=points
 		else:
 			blue+=points	
+	
 	return jsonify(blue=blue,green=green,red=red,yellow=yellow, current=collection.count())
 
 @app.route('/events', methods=['GET'])
@@ -66,17 +68,20 @@ def table():
 def login():
 	if 'admin' in session:
 		return redirect('/admin')
+
 	if request.method == 'POST':
 		password = request.form['password']
 		if not password == 'ihatefishsticks':
 			return redirect('/login')
 		session['admin'] = password
 		return redirect('/admin')
+	
 	return render_template('login.html')
 
 @app.route('/logout')
 def logout():
 	session.pop('admin', None)
+
 	return redirect('/login')
 
 @app.route('/admin', methods=['GET','POST'])
@@ -101,6 +106,7 @@ def admin():
 		event_id = collection.insert(event)
 
 		return redirect('/admin')
+
 	return render_template('admin.html', events=collection.find().sort('_id',-1))
 
 @app.route('/change', methods=['GET', 'POST'])
@@ -123,6 +129,7 @@ def change():
 		collection.update({ "event" : event }, { "$set" : { "team": team, "event": event, "points": points }}, upsert=False)
 		
 		return redirect('/admin')
+
 	return redirect('/admin')
 
 @app.route('/testrun', methods=['GET','POST'])
