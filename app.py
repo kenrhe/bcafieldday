@@ -90,7 +90,7 @@ def admin():
 		points=request.form['points']
 		
 		#check if event exists
-		if collection.find({ "event" : event}).limit(1).size() == 1:
+		if collection.find({ "event" : event}).count() > 0:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.")
 
 		#check if user entered a number for points field
