@@ -100,8 +100,8 @@ def admin():
 
 		#check if user entered a number for points field
 		try:
-			points+=0
-		except TypeError:
+			int(points)
+		except ValueError:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
 
 		event = {"event":event,"team":team,"points":points}
@@ -118,10 +118,9 @@ def change():
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
-		print("[DEBUG]" + points)
 		try:
-			points+=0
-		except TypeError:
+			int(points)
+		except ValueError:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
 		
 		if request.form['submit'] == "REMOVE":
