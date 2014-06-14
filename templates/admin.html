@@ -14,10 +14,10 @@
 			Score: <input type="text" name="points"><br>
 			Team Color: 
 			<select name="team">
-				<option value="blue">blue</option>
-				<option value="green">green</option>
-				<option value="red">red</option>
-				<option value="yellow">yellow</option>
+				<option value="Blue">Blue</option>
+				<option value="Green">Green</option>
+				<option value="Red">Red</option>
+				<option value="Yellow">Yellow</option>
 			</select>
 			<br>
 			<input type="submit" value="Submit">
@@ -39,28 +39,28 @@
 				</td>
 				<td> 			
 					<select name="team">
-						{% if event['team'] == 'blue' %}
-						<option value="blue" selected>blue</option>
+						{% if event['team'] == 'Blue' %}
+						<option value="Blue" selected>Blue</option>
 						{% else %}
-						<option value="blue">blue</option>
+						<option value="Blue">Blue</option>
 						{% endif %}
 
-						{% if event['team'] == 'green' %}
-						<option value="green" selected>green</option>
+						{% if event['team'] == 'Green' %}
+						<option value="Green" selected>Green</option>
 						{% else %}
-						<option value="green">green</option>
+						<option value="Green">Green</option>
 						{% endif %}
 
-						{% if event['team'] == 'red' %}
-						<option value="red" selected>red</option>
+						{% if event['team'] == 'Red' %}
+						<option value="Red" selected>Red</option>
 						{% else %}
-						<option value="red">red</option>
+						<option value="Red">Red</option>
 						{% endif %}
 
-						{% if event['team'] == 'yellow' %}
-						<option value="yellow" selected>yellow</option>
+						{% if event['team'] == 'Yellow' %}
+						<option value="Yellow" selected>Yellow</option>
 						{% else %}
-						<option value="yellow">yellow</option>
+						<option value="Yellow">Yellow</option>
 						{% endif %}
 					</select>
 				</td>
