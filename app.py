@@ -25,11 +25,11 @@ def index():
 	for event in collection.find():
 		team = event['team']
 		points = int(event['points'])
-		if (team == "green"):
+		if (team == "Green"):
 			green+= points
-		elif (team == "yellow"):
+		elif (team == "Yellow"):
 			yellow+= points
-		elif (team == "red"):
+		elif (team == "Red"):
 			red+=points
 		else:
 			blue+=points
@@ -44,11 +44,11 @@ def scores():
 	for event in collection.find():
 		team = event['team']
 		points = int(event['points'])
-		if (team == "green"):
+		if (team == "Green"):
 			green+= points
-		elif (team == "yellow"):
+		elif (team == "Yellow"):
 			yellow+= points
-		elif (team == "red"):
+		elif (team == "Red"):
 			red+=points
 		else:
 			blue+=points	
@@ -57,7 +57,7 @@ def scores():
 @app.route('/events', methods=['GET'])
 def events():
 	return render_template('events.html')
-	
+
 @app.route('/change', methods=['GET', 'POST'])
 def change():
 	#returning redirect will cause it do go to the specificed URL
