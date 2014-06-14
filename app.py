@@ -99,7 +99,9 @@ def admin():
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.")
 
 		#check if user entered a number for points field
-		if not isinstance(points, int):
+		try:
+			points+=0
+		except TypeError:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
 
 		event = {"event":event,"team":team,"points":points}
@@ -117,7 +119,9 @@ def change():
 		event=request.form['event']
 		points=request.form['points']
 		
-		if not isinstance(points, int):
+		try:
+			points+=0
+		except TypeError:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
 		
 		if request.form['submit'] == "REMOVE":
