@@ -39,10 +39,29 @@
 				</td>
 				<td> 			
 					<select name="team">
+						{% if {{ event['team'] }} == 'blue' %}
+						<option value="blue" selected>blue</option>
+						{% else %}
 						<option value="blue">blue</option>
+						{% endif %}
+
+						{% if {{ event['team'] }} == 'green'}
+						<option value="green" selected>green</option>
+						{% else %}
 						<option value="green">green</option>
+						{% endif %}
+
+						{% if {{ event['team'] }} == 'red'}
+						<option value="red" selected>red</option>
+						{% else %}
 						<option value="red">red</option>
+						{% endif %}
+
+						{% if {{ event['team'] }} == 'yellow'}
+						<option value="yellow" selected>yellow</option>
+						{% else %}
 						<option value="yellow">yellow</option>
+						{% endif %}
 					</select>
 				</td>
 				<td> <input type="submit" value="CHANGE" name="submit"> </td>
