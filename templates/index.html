@@ -13,16 +13,16 @@
     CanvasJS.addColorSet("teamColors",
                 [//colorSet Array
 
+                "#D62408",
                 "#2159D6",
                 "#21AA29",
-                "#D62408",
                 "#FFCF00"             
                 ]);
     // initial values of dataPoints
     var dps = [
+    {label: "RED", y: {{red}}},
     {label: "BLUE", y: {{blue}}},
     {label: "GREEN", y: {{green}}},
-    {label: "RED", y: {{red}}},
     {label: "YELLOW", y: {{yellow}}},
     ];
     //var totalPoints = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: 0";
@@ -80,9 +80,9 @@
         current = data.current;
       });
       // adding random value to random dataPoint
-      dps[0].y = blue;
-      dps[1].y = green;
-      dps[2].y = red;
+      dps[0].y = red;
+      dps[1].y = blue;
+      dps[2].y = green;
       dps[3].y = yellow;
       if (lastUpdate != current) {
         lastUpdate = current;
@@ -127,7 +127,7 @@
               <td> {{ event['points'] }} </td>
               <td> 
                 {% if event['team'] == 'Blue' %}
-                <font color="rgb(33,89,214)">{{ event['team'] }} </font>
+                <font color="#D62408">{{ event['team'] }} </font>
                 {% elif event['team'] == 'Green' %}
                 <img src="/static/green.png" alt="Green Team">
 
