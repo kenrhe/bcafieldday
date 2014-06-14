@@ -118,7 +118,7 @@ def change():
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
-		print(points)
+		print("[DEBUG]" + points)
 		try:
 			points+=0
 		except TypeError:
