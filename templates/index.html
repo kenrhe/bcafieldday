@@ -126,18 +126,7 @@
               <td> {{ event['event'] }} </td>
               <td> {{ event['points'] }} </td>
               <td> 
-                {% if event['team'] == 'Blue' %}
-                <font color="#D62408">{{ event['team'] }} </font>
-                {% elif event['team'] == 'Green' %}
-                <img src="/static/green.png" alt="Green Team">
-
-                {% elif event['team'] == 'Red' %}
-                <img src="/static/red.png" alt="Red Team">
-
-                {% else %}
-                <img src="/static/yellow.png" alt="Yellow Team">
-
-                {% endif %}
+                  {{ event['team'] }}
 
               </td>
             </tr>
