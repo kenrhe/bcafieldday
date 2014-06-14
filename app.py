@@ -65,7 +65,7 @@ def change():
 
 		team=request.form['team']
 		event=request.form['event']
-		if collection.find({ "event" : event}).limit(1).size() == 1:
+		if collection.find({ "event" : event}).count() == 1:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.")
 		points=request.form['points']
 		if request.form['submit'] == "REMOVE":
@@ -104,8 +104,7 @@ def admin():
 	if request.method == 'POST':
 		team=request.form['team']
 		event=request.form['event']
-		findevent = collection.find({"event":event}).limit(1)
-		if findevent.size() == 1:
+		if collection.find({ "event" : event}).count() == 1:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.")
 		points=request.form['points']
 
