@@ -125,9 +125,9 @@
             <tr>
               <td> {{ event['event'] }} </td>
               <td> {{ event['points'] }} </td>
-              <td> {{ event['team'] }} 
+              <td> 
                 {% if event['team'] == 'Blue' %}
-                <img src="/static/blue.png" alt="Blue Team">
+                <font color="blue">{{ event['team'] }} </font>
                 {% elif event['team'] == 'Green' %}
                 <img src="/static/green.png" alt="Green Team">
 
