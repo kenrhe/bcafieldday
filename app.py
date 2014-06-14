@@ -54,6 +54,10 @@ def scores():
 			blue+=points	
 	return jsonify(blue=blue,green=green,red=red,yellow=yellow, current=collection.count())
 
+@app.route('/events', methods=['GET'])
+def events():
+	return render_template('events.html')
+	
 @app.route('/change', methods=['GET', 'POST'])
 def change():
 	#returning redirect will cause it do go to the specificed URL
