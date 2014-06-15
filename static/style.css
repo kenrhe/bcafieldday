@@ -30,9 +30,11 @@ h2 {
    position:fixed;
    left:0;
    bottom:0;
-   height:12px;
+   height:24px;
    width:100%;
-   font-size:12px;
+   font-size:30px;
+   margin-top:6px;
+   margin-bottom:6px;
    background:black;
    color:white;
 }
