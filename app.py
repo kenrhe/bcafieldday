@@ -58,7 +58,7 @@ def scores():
 
 @app.route('/events', methods=['GET'])
 def events():
-	return render_template('events.html')
+	return render_template('events.html', events=collection.find().sort('_id',-1))
 
 @app.route('/table')
 def table():
