@@ -103,12 +103,32 @@
       setInterval(function(){updateChart()}, updateInterval);
 
     };
+      $(document).ready(function() {
+
+    var resizeText = function () {
+        // Standard height, for which the body font size is correct
+        var preferredFontSize = 768; // %
+        var preferredSize = 1024 * 768;
+
+        var currentSize = $(window).width() * $(window).height();
+        var scalePercentage = Math.sqrt(currentSize) / Math.sqrt(preferredSize);
+        var newFontSize = preferredFontSize * scalePercentage;
+        $("#headerContainer").css("font-size", newFontSize + 'px');
+    };
+
+    $(window).bind('resize', function() {
+        resizeText();
+    }).trigger('resize');
+
+  });
     </script>
   </head>
   <body>
     <div id="container">
       <div id="top">
-        <h1>BCA <strong>FIELD DAY</strong></h1>
+        <div id="headerContainer">
+        BCA <strong>FIELD DAY</strong>
+      </div>
         <!-- <h2>Developed by Kenneth Rhee</h2> -->
         <div id="chartContainer">
         </div>
