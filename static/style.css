@@ -50,7 +50,7 @@ h2 {
   font-size:18px;
   display:inline-block;
 }
-
+/*
 @media (min-width: 0px) {
   #headerContainer {
     font-size: 30px;
@@ -64,8 +64,8 @@ h2 {
     font-size:6px;
   }
 }
-
-@media (min-width: 500px) {
+*/
+@media (min-width: 0px) {
   #headerContainer {
     font-size: 48px;
     margin-top:12px;
