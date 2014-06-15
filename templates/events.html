@@ -10,13 +10,13 @@
 
     var resizeText = function () {
         // Standard height, for which the body font size is correct
-        var preferredFontSize = 180; // %
+        var preferredFontSize = 100; // %
         var preferredSize = 1024 * 768;
 
         var currentSize = $(window).width() * $(window).height();
         var scalePercentage = Math.sqrt(currentSize) / Math.sqrt(preferredSize);
-        var newFontSize = preferredFontSize * scalePercentage;
-        $("#headerContainer").css("font-size", newFontSize + '%');
+        var newFontSize = $(window).height()*0.1;
+        $("#headerContainer").css("font-size", newFontSize + 'px');
     };
 
     $(window).bind('resize', function() {
