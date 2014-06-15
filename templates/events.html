@@ -5,38 +5,35 @@
   <link rel="stylesheet" type="text/css" href="/static/style.css">
   <script type="text/javascript" src="/static/canvasjs.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <div id="container">
-      <div id="top" style="height:20%;">
-        <div id="headerContainer">
+</head>
+<body>
+  <div id="container">
+    <div id="top" style="height:20%;">
+      <div id="headerContainer">
         <a href="/" style="text-decoration:none">BCA <strong>FIELD DAY</strong></a>
       </div>
-        <!-- <h2>Developed by Kenneth Rhee</h2> -->
-      </div>
-      <div id="bottom" style="height:80%;">
-        <div id="tableContainer">
-          <table>
-            <tr>
-              <td> Event Name </td>
-              <td> Points </td>
-              <td> Team </td>
-              <td> Comment </td>
-            </tr>
-            {% for event in events %}
-            <tr>
-              <td> {{ event['event'] }} </td>
-              <td> {{ event['points'] }} </td>
-              <td> 
-                  {{ event['team'] }}
-
-              </td>
-              <td>{{ event['comment'] }}</td>
-            </tr>
-            {% endfor %}
-          </table>
-        </div>
+      <!-- <h2>Developed by Kenneth Rhee</h2> -->
+    </div>
+    <div id="bottom" style="height:80%;">
+      <div id="tableContainer">
+        <table>
+          <tr>
+            <td> Event Name </td>
+            <td> Points </td>
+            <td> Team </td>
+            <td> Comment </td>
+          </tr>
+          {% for event in events %}
+          <tr>
+            <td>{{ event['event'] }}</td>
+            <td>{{ event['points'] }}</td>
+            <td>{{ event['team'] }}</td>
+            <td>{{ event['comment'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
     </div>
-  </body>
-  </html>
+  </div>
+</body>
+</html>
