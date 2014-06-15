@@ -85,11 +85,12 @@
       dps[1].y = blue;
       dps[2].y = green;
       dps[3].y = yellow;
-      if (timeElapsed/60 >= 0) {
-        if (timeElapsed/60 == 1) {
+      var minutesElapsed = parseInt(timeElapsed/60);
+      if (minutesElapsed >= 0) {
+        if (minutesElapsed == 1) {
           $('#updateContainer').text('Last Updated: A minute ago');
         } else {
-          $('#updateContainer').text('Last Updated: ' + timeElapsed/60 + ' minutes ago');
+          $('#updateContainer').text('Last Updated: ' + minutesElapsed + ' minutes ago');
         }
       }
       if (lastUpdate != current) {
@@ -116,7 +117,7 @@
     <div id="container">
       <div id="top">
         <div id="headerContainer">
-          BCA <strong>FIELD DAY</strong> <div id="updateContainer">Last Updated:</div>
+          BCA <strong>FIELD DAY</strong> <div id="updateContainer">Last Updated: Just Now</div>
         </div>
         <!-- <h2>Developed by Kenneth Rhee</h2> -->
         <div id="chartContainer">
