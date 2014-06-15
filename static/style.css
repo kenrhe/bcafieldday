@@ -39,35 +39,35 @@ h2 {
 }
 
 @media (min-width: 300px) {
-    #headerContainer {
-        font-size: 30px;
-        margin-top:12px;
-        margin-bottom:6px;
-    }
+  #headerContainer {
+    font-size: 30px;
+    margin-top:12px;
+    margin-bottom:6px;
+  }
 }
 
 @media (min-width: 500px) {
-    #headerContainer {
-        font-size: 50px;
-        margin-top:12px;
-        margin-bottom:6px;
+  #headerContainer {
+    font-size: 50px;
+    margin-top:12px;
+    margin-bottom:6px;
 
-    }
+  }
 }
 
 @media (min-width: 700px) {
-    #headerContainer {
-        font-size: 70px;
-        margin-top:12px;
-        margin-bottom:6px;
+  #headerContainer {
+    font-size: 70px;
+    margin-top:12px;
+    margin-bottom:6px;
 
-    }
+  }
 }
 
 @media (min-width: 1200px) {
-    #headerContainer {
-        font-size: 100px;
-    }
+  #headerContainer {
+    font-size: 100px;
+  }
 }
 
 
