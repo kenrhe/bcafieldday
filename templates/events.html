@@ -16,7 +16,7 @@
         var currentSize = $(window).width() * $(window).height();
         var scalePercentage = Math.sqrt(currentSize) / Math.sqrt(preferredSize);
         var newFontSize = preferredFontSize * scalePercentage;
-        $("body").css("font-size", newFontSize + '%');
+        $("#headerContainer").css("font-size", newFontSize + '%');
     };
 
     $(window).bind('resize', function() {
@@ -29,7 +29,9 @@
   <body>
     <div id="container">
       <div id="top" style="height:20%;">
+        <div id="headerContainer">
         <a href="/" style="text-decoration:none"><h1>BCA <strong>FIELD DAY</strong></h1></a>
+      </div>
         <!-- <h2>Developed by Kenneth Rhee</h2> -->
       </div>
       <div id="bottom" style="height:80%;">
