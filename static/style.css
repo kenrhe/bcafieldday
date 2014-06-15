@@ -163,6 +163,6 @@ tr:first-child td {
 }
 
 #tableContainer {
-  margin-top: 12px;
   margin: 0 auto;
+  margin-top: 12px;
 }
