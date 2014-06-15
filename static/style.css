@@ -95,7 +95,7 @@ h2 {
 
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   #headerContainer {
     font-size: 96px;
   }
