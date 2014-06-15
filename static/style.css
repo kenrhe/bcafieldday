@@ -7,8 +7,7 @@ body {
 
 h1 {
   color: rgb(102,102,102);
-  font-size: 4 vw;
-  font-size: 100px;
+  font-size: 80px;
   font-weight: 300;
   color:#666666;
   text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
@@ -39,14 +38,14 @@ h2 {
   position:absolute;
   top: 0;
   background-color: rgba(243,243,243,1);
-  height: 70%;
+  height: 60%;
 }
 
 #bottom {
   position:absolute;
   background-color: white;
   bottom:0;
-  height: 30%;
+  height: 40%;
 }
 
 #chartContainer { 
