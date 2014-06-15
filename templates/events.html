@@ -5,26 +5,6 @@
   <link rel="stylesheet" type="text/css" href="/static/style.css">
   <script type="text/javascript" src="/static/canvasjs.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript">
-  $(document).ready(function() {
-
-    var resizeText = function () {
-        // Standard height, for which the body font size is correct
-        var preferredFontSize = 768; // %
-        var preferredSize = 1024 * 768;
-
-        var currentSize = $(window).width() * $(window).height();
-        var scalePercentage = Math.sqrt(currentSize) / Math.sqrt(preferredSize);
-        var newFontSize = preferredFontSize * scalePercentage;
-        $("#headerContainer").css("font-size", newFontSize + 'px');
-    };
-
-    $(window).bind('resize', function() {
-        resizeText();
-    }).trigger('resize');
-
-  });
-  </script>
   </head>
   <body>
     <div id="container">
@@ -41,6 +21,7 @@
               <td> Event Name </td>
               <td> Points </td>
               <td> Team </td>
+              <td> Comment </td>
             </tr>
             {% for event in events %}
             <tr>
@@ -50,6 +31,7 @@
                   {{ event['team'] }}
 
               </td>
+              <td>{{ event['comment'] }}</td>
             </tr>
             {% endfor %}
           </table>
