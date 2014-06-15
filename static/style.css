@@ -39,14 +39,14 @@ h2 {
   position:absolute;
   top: 0;
   background-color: rgba(243,243,243,1);
-  height: 60%;
+  height: 70%;
 }
 
 #bottom {
   position:absolute;
   background-color: white;
   bottom:0;
-  height: 40%;
+  height: 30%;
 }
 
 #chartContainer { 
