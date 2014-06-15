@@ -38,6 +38,11 @@ h2 {
   margin-bottom:12px;
 }
 
+#updateContainer {
+  font-size:20px;
+  display:inline-block;
+}
+
 @media (min-width: 300px) {
   #headerContainer {
     font-size: 30px;
