@@ -107,8 +107,7 @@ h2 {
 }
 
 #chartContainer { 
-  margin-top:6px;
-  margin-bottom:6px;
+  height:72%;
   width:95%; 
   margin: 0 auto;
 }
