@@ -79,7 +79,7 @@ h2 {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1200px) {
   #headerContainer {
     font-size: 72px;
     margin-top:12px;
@@ -95,7 +95,7 @@ h2 {
 
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1500px) {
   #headerContainer {
     font-size: 96px;
   }
