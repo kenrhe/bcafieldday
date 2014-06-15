@@ -26,6 +26,16 @@ h2 {
   margin-bottom: 6px;
 }
 
+#headerContainer {
+  color: rgb(102,102,102);
+  font-size: 80px;
+  font-weight: 300;
+  color:#666666;
+  text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
+  margin-top:24px;
+  margin-bottom:12px;
+}
+
 #container {
 }
 
