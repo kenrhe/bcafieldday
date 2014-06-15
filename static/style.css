@@ -57,29 +57,53 @@ h2 {
     margin-top:12px;
     margin-bottom:6px;
   }
+  #updateContainer {
+    font-size:6px;
+  }
+  #credits {
+    font-size:6px;
+  }
 }
 
 @media (min-width: 500px) {
   #headerContainer {
-    font-size: 50px;
+    font-size: 48px;
     margin-top:12px;
     margin-bottom:6px;
-
+  }
+  #updateContainer {
+    font-size:12px;
+  }
+  #credits {
+    font-size:12px;
   }
 }
 
 @media (min-width: 700px) {
   #headerContainer {
-    font-size: 70px;
+    font-size: 72px;
     margin-top:12px;
     margin-bottom:6px;
 
   }
+  #updateContainer {
+    font-size:12px;
+  }
+  #credits {
+    font-size:12px;
+  }
+
 }
 
 @media (min-width: 1200px) {
   #headerContainer {
-    font-size: 100px;
+    font-size: 96px;
+  }
+  #updateContainer {
+    font-size:18px;
+  }
+  #credits {
+    font-size:18px;
   }
 }
 
