@@ -20,7 +20,8 @@
 				<option value="Green">Green</option>
 				<option value="Red">Red</option>
 				<option value="Yellow">Yellow</option>
-			</select>
+			</select><br>
+			Commment: (winner name, etc.) <input type="text" name="comment">
 			<br>
 			<input type="submit" value="Submit">
 		</form>
@@ -30,7 +31,7 @@
 			<td> Event Name </td>
 			<td> Points </td>
 			<td> Team </td>
-
+			<td> Comment </td>
 		</tr>
 		{% for event in events %}
 		<tr>
@@ -65,6 +66,9 @@
 						<option value="Yellow">Yellow</option>
 						{% endif %}
 					</select>
+				</td>
+				<td>
+					<input type="text" name="comment" value="{{ event['comment'] }}">
 				</td>
 				<td> <input type="submit" value="CHANGE" name="submit"> </td>
 				<td> <input type="submit" value="REMOVE" name="submit"></td>

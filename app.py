@@ -93,7 +93,7 @@ def admin():
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
-		
+		comment=request.form['comment']
 		#check if event exists
 		if collection.find({ "event" : event}).count() > 0:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.")
@@ -104,7 +104,8 @@ def admin():
 		except ValueError:
 			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
 
-		event = {"event":event,"team":team,"points":points}
+		#insert new event into db
+		event = {"event":event,"team":team,"points":points,"comment":comment}
 		event_id = collection.insert(event)
 
 		return redirect('/admin')
@@ -118,6 +119,8 @@ def change():
 		team=request.form['team']
 		event=request.form['event']
 		points=request.form['points']
+		comment=request.form['comment']
+
 		try:
 			int(points)
 		except ValueError:
@@ -127,9 +130,9 @@ def change():
 			collection.remove({"event" : event})
 			return redirect('/admin')
 		
-		print ("changed %s %s %s" % (team, event, points))
+		print ("changed %s %s %s %s" % (team, event, points, comment))
 		
-		collection.update({ "event" : event }, { "$set" : { "team": team, "event": event, "points": points }}, upsert=False)
+		collection.update({ "event" : event }, { "$set" : { "team": team, "event": event, "points": points, "comment":comment }}, upsert=False)
 		
 		return redirect('/admin')
 
