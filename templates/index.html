@@ -88,9 +88,9 @@
       var minutesElapsed = parseInt(timeElapsed/60);
       if (minutesElapsed > 0) {
         if (minutesElapsed == 1) {
-          $('#updateContainer').text('Last Updated: A minute ago');
+          $('#updateContainer').text('Last Update: A minute ago');
         } else {
-          $('#updateContainer').text('Last Updated: ' + minutesElapsed + ' minutes ago');
+          $('#updateContainer').text('Last Update: ' + minutesElapsed + ' minutes ago');
         }
       }
       if (lastUpdate != current) {
@@ -99,7 +99,7 @@
         $('#tableContainer').fadeOut('fast');
         $('#tableContainer').load("/table");
         $('#tableContainer').fadeIn('fast');
-        $('#updateContainer').text('Last Updated: Just Now');
+        $('#updateContainer').text('Last Update: Just Now');
       }
       chart.render();
       // updating legend text. 
