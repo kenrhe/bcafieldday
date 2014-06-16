@@ -63,7 +63,7 @@ a:hover, a:active { text-decoration: none; color:#666666 }
   font-size:18px;
   font-style:normal;
   display:inline-block;
-  margin-left:10%;
+  margin-left:5%;
 }
 
 @media (min-width: 0px) {
