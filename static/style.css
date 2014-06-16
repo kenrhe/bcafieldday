@@ -41,7 +41,8 @@ a:hover, a:active { text-decoration: none; color:#666666 }
 }
 
 #header {
-  text-align:center;
+  text-align:center; 
+  padding-right:1px;
   display:inline-block;
 }
 
