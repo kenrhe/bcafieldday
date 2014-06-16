@@ -39,11 +39,6 @@ a:hover, a:active { text-decoration: none; color:#666666 }
   margin-top:24px;
 }
 
-#header {
-  position:absolute;
-  margin: 0 auto;
-  display:inline-block;
-}
 #credits {
   font-size: 18px;
   font-weight:150;
