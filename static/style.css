@@ -41,6 +41,7 @@ a:hover, a:active { text-decoration: none; color:#666666 }
 
 #header {
   text-align:center;
+  position:absolute;
   display:inline-block;
 }
 
