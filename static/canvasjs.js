@@ -49,7 +49,7 @@
             verticalAlign: "top",//top, center, bottom
             horizontalAlign: "center",//left, center, right
             fontSize: 20,//in pixels
-            fontFamily: "Lato",
+            fontFamily: "Calibri",
             fontWeight: "normal", //normal, bold, bolder, lighter,
             fontColor: "black",
             fontStyle: "normal", // normal, italic, oblique
@@ -68,7 +68,7 @@
             horizontalAlign: "right",
 
             fontSize: 14,//in pixels
-            fontFamily: "calibri",
+            fontFamily: "Lato",
             fontWeight: "normal", //normal, bold, bolder, lighter,
             fontColor: "black",
             fontStyle: "normal", // normal, italic, oblique
