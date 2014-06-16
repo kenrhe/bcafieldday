@@ -49,7 +49,7 @@
             verticalAlign: "top",//top, center, bottom
             horizontalAlign: "center",//left, center, right
             fontSize: 20,//in pixels
-            fontFamily: "Calibri",
+            fontFamily: "Lato",
             fontWeight: "normal", //normal, bold, bolder, lighter,
             fontColor: "black",
             fontStyle: "normal", // normal, italic, oblique
