@@ -68,7 +68,7 @@
             horizontalAlign: "right",
 
             fontSize: 14,//in pixels
-            fontFamily: "Lato",
+            fontFamily: "calibri",
             fontWeight: "normal", //normal, bold, bolder, lighter,
             fontColor: "black",
             fontStyle: "normal", // normal, italic, oblique
