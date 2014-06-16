@@ -41,7 +41,6 @@ a:hover, a:active { text-decoration: none; color:#666666 }
 
 #header {
   margin: 0 auto;
-  float:right;
   display:inline-block;
 }
 #credits {
@@ -58,6 +57,7 @@ a:hover, a:active { text-decoration: none; color:#666666 }
 #updateContainer {
   font-size:18px;
   display:inline-block;
+  float:right;
 }
 
 @media (min-width: 0px) {
