@@ -62,10 +62,10 @@ a:hover, a:active { text-decoration: none; color:#666666 }
     margin-bottom:6px;
   }
   #updateContainer {
-    font-size:3px;
+    font-size:6px;
   }
   #credits {
-    font-size:3px;
+    font-size:6px;
   }
 }
 
