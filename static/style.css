@@ -37,7 +37,6 @@ a:hover, a:active { text-decoration: none; color:#666666 }
   color:#666666;
   text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
   margin-top:24px;
-  position:relative;
 }
 
 #header {
@@ -61,8 +60,7 @@ a:hover, a:active { text-decoration: none; color:#666666 }
   text-align:none;
   font-size:18px;
   display:inline-block;
-  margin-bottom:-0.8%;
-  bottom:0;
+  margin-left:50%;
 }
 
 @media (min-width: 0px) {
