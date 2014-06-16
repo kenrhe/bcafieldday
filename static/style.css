@@ -41,6 +41,7 @@ a:hover, a:active { text-decoration: none; color:#666666 }
 
 #header {
   margin: 0 auto;
+  display:inline-block;
 }
 #credits {
   font-size: 18px;
