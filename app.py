@@ -13,9 +13,14 @@ MONGO_URL = os.environ.get('MONGOHQ_URL')
 client = MongoClient(MONGO_URL)
 db = client.app25605883
 collection = db.points
+statistics = db.statistics
 
 @app.route('/')
 def index():
+	viewCount = statistics.find({ "_id" : ObjectId("539e5433dbd18c85a6000061") })
+	updatedCount = parseInt(viewCount['viewCount'])+1
+	statistics.update({ "_id" : ObjectId("539e5433dbd18c85a6000061") }, { "$set" : { "viewCount": updatedCount }}, upsert=False)
+
 	green = 0
 	yellow = 0
 	red = 0
