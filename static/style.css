@@ -40,6 +40,7 @@ a:hover, a:active { text-decoration: none; color:#666666 }
 }
 
 #header {
+  position:absolute;
   margin: 0 auto;
   display:inline-block;
 }
@@ -57,7 +58,6 @@ a:hover, a:active { text-decoration: none; color:#666666 }
 #updateContainer {
   font-size:18px;
   display:inline-block;
-  float:right;
 }
 
 @media (min-width: 0px) {
