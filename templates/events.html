@@ -5,21 +5,66 @@
   <link rel="stylesheet" type="text/css" href="/static/style.css">
   <script type="text/javascript" src="/static/canvasjs.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    var updateInterval = 2000;
+  <script type="text/javascript">
+  window.onload = function () {
+    var updateInterval = 2000;  // milliseconds
+    var timeElapsed = 0;
+    var lastUpdate = 0;
+    $.getJSON('/scores', {
+    }, function(data) {
+      lastUpdate = data.current;
+    });
+
     var updateChart = function () {
-      $('tableContainer').load('/fulltable');
-    }
-    setInterval(function(){updateChart()}, updateInterval);
+      timeElapsed+= 2;
+            // Selecting a random dataPoint
+      //var dataPointIndex = Math.round(Math.random()*3);   
+      //var dataPointIndex = 0;
+      // generating random value
+      //var deltaY = Math.random()*100;
 
+      $.getJSON('/scores', {
 
+      }, function(data) {
+        blue = data.blue;
+        green = data.green;
+        red = data.red;
+        yellow = data.yellow;
+        current = data.current;
+      });
+      // adding random value to random dataPoint
+      var minutesElapsed = parseInt(timeElapsed/60);
+      if (minutesElapsed > 0) {
+        if (minutesElapsed == 1) {
+          $('#updateContainer').text('Last Update: A minute ago');
+        } else {
+          $('#updateContainer').text('Last Update: ' + minutesElapsed + ' minutes ago');
+        }
+      }
+      if (lastUpdate != current) {
+        lastUpdate = current;
+        timeElapsed = 0;
+        $('#tableContainer').fadeOut('fast');
+        $('#tableContainer').load("/table");
+        $('#tableContainer').fadeIn('fast');
+        $('#updateContainer').text('Last Update: Just Now');
+      }
+      // updating legend text. 
+      //sum = sum + deltaY;
+      //totalEmployees = "TOTAL POINTS ACCUMULATED BY ALL TEAMS: " + sum;      
+      //chart.options.data[0].legendText = totalPoints;  
+    };
+      // update chart after specified interval
+      setInterval(function(){updateChart()}, updateInterval);
+
+    };
     </script>
 </head>
 <body>
   <div id="container">
     <div id="top" style="height:15%;">
       <div id="headerContainer">
-        <a href="/" style="text-decoration:none">BCA <strong>FIELD DAY</strong></a>
+        <a href="/" style="text-decoration:none">BCA <strong>FIELD DAY</strong></a> <div id="updateContainer">Last Update: Just Now</div>
       </div>
       <!-- <h2>Developed by Kenneth Rhee</h2> -->
     </div>
