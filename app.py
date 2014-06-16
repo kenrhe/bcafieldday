@@ -17,7 +17,7 @@ statistics = db.statistics
 
 @app.route('/')
 def index():
-	viewCount = statistics.find_one({ "_id" : "539e5433dbd18c85a6000061" })[0]
+	viewCount = statistics.find()[0]
 	updatedCount = int(viewCount['viewCount'])+1
 	statistics.update({ "_id" : ObjectId("539e5433dbd18c85a6000061") }, { "$set" : { "viewCount": updatedCount }}, upsert=False)
 
