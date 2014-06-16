@@ -25,7 +25,9 @@
 			</select><br>
 			Commment: [Winner name, etc.] <input type="text" name="comment">
 			<br>
+			<!--
 			<input type="submit" value="Submit">
+			-->
 		</form>
 	</center>
 	<table border="1">
@@ -72,8 +74,12 @@
 				<td>
 					<input type="text" name="comment" value="{{ event['comment'] }}">
 				</td>
-				<td> <input type="submit" value="CHANGE" name="submit"> </td>
+				<td> X </td>
+				<!--<td> <input type="submit" value="CHANGE" name="submit"> </td> -->
+				<!-- 
 				<td> <input type="submit" value="REMOVE" name="submit"></td>
+				-->
+				<td> X </td>
 			</form>
 		</tr>
 		{% endfor %}
