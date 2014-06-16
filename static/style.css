@@ -28,7 +28,7 @@ h2 {
 a:visited { text-decoration: none; color:#666666; }
 a:hover { text-decoration: none; color:#666666; }
 a:focus { text-decoration: none; color:#666666; }
-a:hover, a:active { text-decoration: none; color:#666666 }
+a:hover, a:active { text-decoration: none; color:#666666; }
 #headerContainer {
   color: rgb(102,102,102);
   font-size: 96px;
