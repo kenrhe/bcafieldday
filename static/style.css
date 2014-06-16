@@ -36,11 +36,12 @@ a:hover, a:active { text-decoration: none; color:#666666 }
   font-weight: 300;
   color:#666666;
   text-shadow: 0 1px 1px rgba(255,255,255, 0.6);
-
-  margin: 0 auto;
   margin-top:24px;
 }
 
+#header {
+  margin: 0 auto;
+}
 #credits {
   font-size: 18px;
   font-weight:150;
