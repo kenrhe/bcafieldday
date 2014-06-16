@@ -19,7 +19,7 @@ statistics = db.statistics
 def index():
 	viewCount = statistics.find()[0]
 	updatedCount = int(viewCount['viewCount'])+1
-	statistics.update({ "_id" : "539e5433dbd18c85a6000061" }, { "$set" : { "viewCount": updatedCount }}, upsert=False)
+	statistics.update({ "identifier" : "69" }, { "$set" : { "viewCount": updatedCount }}, upsert=False)
 
 	green = 0
 	yellow = 0
