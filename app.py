@@ -64,6 +64,10 @@ def events():
 def table():
 	return render_template('table.html', events=collection.find().sort('_id',-1).limit(10))
 
+@app.route('/fulltable')
+def fulltable():
+	return render_template('table.html', events=collection.find().sort('_id',-1))
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	if 'admin' in session:

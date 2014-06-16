@@ -5,6 +5,15 @@
   <link rel="stylesheet" type="text/css" href="/static/style.css">
   <script type="text/javascript" src="/static/canvasjs.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    var updateInterval = 2000;
+    var updateChart = function () {
+      $('tableContainer').load('/fulltable');
+    }
+    setInterval(function(){updateChart()}, updateInterval);
+
+
+    </script>
 </head>
 <body>
   <div id="container">
