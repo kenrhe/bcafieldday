@@ -105,13 +105,13 @@ def admin():
 		comment=request.form['comment']
 		#check if event exists
 		if collection.find({ "event" : event}).count() > 0:
-			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.", eventCount=collection.count())
+			return render_template('admin.html', events=collection.find().sort('_id',-1), error="That event already exists! Try again with a different name.", eventCount=collection.count(),viewCount=statistics.find()[0]['viewCount'])
 
 		#check if user entered a number for points field
 		try:
 			int(points)
 		except ValueError:
-			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.", eventCount=collection.count())
+			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.", eventCount=collection.count(),viewCount=statistics.find()[0]['viewCount'])
 
 		#insert new event into db
 		event = {"event":event,"team":team,"points":points,"comment":comment}
@@ -119,7 +119,7 @@ def admin():
 
 		return redirect('/admin')
 
-	return render_template('admin.html', events=collection.find().sort('_id',-1), eventCount=collection.count())
+	return render_template('admin.html', events=collection.find().sort('_id',-1), eventCount=collection.count(),viewCount=statistics.find()[0]['viewCount'])
 
 @app.route('/change', methods=['GET', 'POST'])
 def change():
@@ -133,7 +133,7 @@ def change():
 		try:
 			int(points)
 		except ValueError:
-			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.")
+			return render_template('admin.html', events=collection.find().sort('_id',-1), error="You must use numbers for the points field.", viewCount=statistics.find()[0]['viewCount'])
 		
 		if request.form['submit'] == "REMOVE":
 			collection.remove({"event" : event})
