@@ -112,7 +112,7 @@ a:hover, a:active { text-decoration: none; color:#666666; }
 
 @media (min-width: 1500px) {
   #headerContainer {
-    font-size: 96px;
+    font-size: 78px;
   }
   #updateContainer {
     font-size:18px;
