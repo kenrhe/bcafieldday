@@ -95,6 +95,10 @@ def logout():
 
 @app.route('/admin', methods=['GET','POST'])
 def admin():
+	#Field Day is over, so disable admin page.
+	return redirect('/login')
+
+
 	if not 'admin' in session:
 		return redirect('/login')
 
