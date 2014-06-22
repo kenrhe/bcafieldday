@@ -75,12 +75,15 @@ def fulltable():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+	#disable login page since field day is over
+	return redirect('/')
+
 	if 'admin' in session:
 		return redirect('/admin')
 
 	if request.method == 'POST':
 		password = request.form['password']
-		if not password == 'ihatefishsticks':
+		if not password == 'password':
 			return redirect('/login')
 		session['admin'] = password
 		return redirect('/admin')
